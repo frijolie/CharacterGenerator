@@ -1,0 +1,101 @@
+[
+  {
+    "acBonus": 0,
+    "checkPenalty": 0,
+    "speedPenalty": 0,
+    "fumbleDie": "d4",
+    "armorType": "ARMOR",
+    "name": "Unarmored",
+    "costInCopper": 0.0
+  },
+  {
+    "acBonus": 1,
+    "checkPenalty": 0,
+    "speedPenalty": 0,
+    "fumbleDie": "d8",
+    "armorType": "ARMOR",
+    "name": "Padded",
+    "costInCopper": 500.0
+  },
+  {
+    "acBonus": 2,
+    "checkPenalty": -1,
+    "speedPenalty": 0,
+    "fumbleDie": "d8",
+    "armorType": "ARMOR",
+    "name": "Leather",
+    "costInCopper": 2000.0
+  },
+  {
+    "acBonus": 3,
+    "checkPenalty": -2,
+    "speedPenalty": 0,
+    "fumbleDie": "d8",
+    "armorType": "ARMOR",
+    "name": "Studded leather",
+    "costInCopper": 4500.0
+  },
+  {
+    "acBonus": 3,
+    "checkPenalty": -3,
+    "speedPenalty": 0,
+    "fumbleDie": "d12",
+    "armorType": "ARMOR",
+    "name": "Hide",
+    "costInCopper": 3000.0
+  },
+  {
+    "acBonus": 4,
+    "checkPenalty": -4,
+    "speedPenalty": -5,
+    "fumbleDie": "d12",
+    "armorType": "ARMOR",
+    "name": "Scale mail",
+    "costInCopper": 8000.0
+  },
+  {
+    "acBonus": 5,
+    "checkPenalty": -5,
+    "speedPenalty": -5,
+    "fumbleDie": "d12",
+    "armorType": "ARMOR",
+    "name": "Chainmail",
+    "costInCopper": 15000.0
+  },
+  {
+    "acBonus": 6,
+    "checkPenalty": -6,
+    "speedPenalty": -5,
+    "fumbleDie": "d16",
+    "armorType": "ARMOR",
+    "name": "Banded mail",
+    "costInCopper": 25000.0
+  },
+  {
+    "acBonus": 7,
+    "checkPenalty": -7,
+    "speedPenalty": -10,
+    "fumbleDie": "d16",
+    "armorType": "ARMOR",
+    "name": "Half-plate",
+    "costInCopper": 55000.0
+  },
+  {
+    "acBonus": 8,
+    "checkPenalty": -8,
+    "speedPenalty": -10,
+    "fumbleDie": "d16",
+    "armorType": "ARMOR",
+    "name": "Full plate",
+    "costInCopper": 120000.0
+  },
+  {
+    "acBonus": 1,
+    "checkPenalty": -1,
+    "speedPenalty": 0,
+    "fumbleDie": "n/a",
+    "armorType": "SHIELD",
+    "name": "Shield",
+    "costInCopper": 1000.0
+  }
+]

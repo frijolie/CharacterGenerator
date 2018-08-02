@@ -1,0 +1,1631 @@
+[
+  {
+    "name": "Alchemist",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "notes": [
+        "***When ignited and tossed, inflicts 1d6 + fire damage.",
+        "A flask of oil burns for six hours in a lantern."
+      ],
+      "name": "Oil, 1 flask***",
+      "costInCopper": 20.0
+    }
+  },
+  {
+    "name": "Animal trainer",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "notes": [],
+      "name": "Pony",
+      "costInCopper": 3000.0
+    }
+  },
+  {
+    "name": "Armorer",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Hammer (as club)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Iron helmet",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Astrologer",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Spyglass",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Barber",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Razor (as dagger)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Scissors",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Beadle",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "notes": [],
+      "name": "Holy symbol",
+      "costInCopper": 2500.0
+    }
+  },
+  {
+    "name": "Beekeeper",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Jar of honey",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Blacksmith",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Hammer (as club)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Steel tongs",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Butcher",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d6",
+        "rangedDamageRoll": "1d6",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Cleaver (as axe)",
+        "costInCopper": 400.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Side of beef",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Caravan guard",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d6",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Short Sword",
+        "costInCopper": 700.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Linen, 1 yard",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Cheesemaker",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Cudgel (as staff)",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Stinky cheese",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Cobbler",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Awl (as dagger)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Shoehorn",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Confidence artist",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Quality cloak",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Cooper",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Crowbar (as club)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Barrel",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Costermonger",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Knife (as dagger)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Fruit",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Cutpurse",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Small chest",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Ditch digger",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Shovel (as staff)",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Fine dirt, 1 lb.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Dock worker",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Pole (as staff)",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "1 late RPG book",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Dwarven apothecarist",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Cudgel (as staff)",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Steel vial",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Dwarven blacksmith",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Hammer (as club)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Mithril, 1 oz.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Dwarven chest maker",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Chisel (as dagger)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Wood, 10 lbs.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Dwarven herder",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ]
+  },
+  {
+    "name": "Dwarven miner",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Pick (as club)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "notes": [],
+      "name": "Lantern",
+      "costInCopper": 1000.0
+    }
+  },
+  {
+    "name": "Dwarven mushroom farmer",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Shovel (as staff)",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Sack",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Dwarven rat catcher",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Net",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Dwarven stonemason",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Hammer (as club)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Fine stone, 10 lbs.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Elven artisan",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Clay, 1 lb.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Elven barrister",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "",
+        "rangedDamageRoll": "1d4",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "20/40/60**",
+        "name": "Quill (as dart)",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Book",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Elven chandler",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Scissors (as dagger)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Candles, 20",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Elven falconer",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Falcon",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Elven forester",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Herbs, 1 lb.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Elven glassblower",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Hammer (as club)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Glass beads",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Elven navigator",
+    "trainedWeapons": [
+      {
+        "wield": "TWO_HANDED",
+        "meleeDamageRoll": "",
+        "rangedDamageRoll": "1d6",
+        "notes": [
+          "*Two-handed weapons use a d16 on initiative checks."
+        ],
+        "isRanged": true,
+        "range": "50/100/150",
+        "name": "Shortbow",
+        "costInCopper": 2500.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Spyglass",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Elven sage",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Parchment and quill pen",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Farmer",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d8",
+        "rangedDamageRoll": "",
+        "notes": [
+          "#These weapons inflict 2x damage on a mounted charge."
+        ],
+        "isRanged": false,
+        "range": "",
+        "name": "Pitchfork (as spear)",
+        "costInCopper": 300.0
+      }
+    ]
+  },
+  {
+    "name": "Fortune-teller",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Tarot deck",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Gambler",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Dice",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Gongfarmer",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Sack of night soil",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Grave digger",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Shovel (as staff)",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Trowel",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Guild beggar",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "",
+        "rangedDamageRoll": "1d4",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "40/80/160**",
+        "name": "Sling",
+        "costInCopper": 200.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Crutches",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Halfling chicken butcher",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d6",
+        "rangedDamageRoll": "1d6",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Handaxe",
+        "costInCopper": 400.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Chicken meat, 5 lbs.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Halfling dyer",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Fabric, 3 yards",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Halfling glovemaker",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Awl (as dagger)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Gloves, 4 pair",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Halfling gypsy",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "",
+        "rangedDamageRoll": "1d4",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "40/80/160**",
+        "name": "Sling",
+        "costInCopper": 200.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Hex doll",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Halfling haberdasher",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Scissors (as dagger)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Fine suits, 3 sets",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Halfling mariner",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Knife (as dagger)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Sailcloth, 2 yards",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Halfling moneylender",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d6",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Short Sword",
+        "costInCopper": 700.0
+      }
+    ],
+    "tradeGood": {
+      "name": "5GP, 10SP, 200CP",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Halfling trader",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d6",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Short Sword",
+        "costInCopper": 700.0
+      }
+    ],
+    "tradeGood": {
+      "name": "20SP",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Halfling vagrant",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Begging bowl",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Healer",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "notes": [],
+      "name": "Holy symbol",
+      "costInCopper": 2500.0
+    }
+  },
+  {
+    "name": "Herbalist",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Herbs, 1 lb.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Herder",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ]
+  },
+  {
+    "name": "Hunter",
+    "trainedWeapons": [
+      {
+        "wield": "TWO_HANDED",
+        "meleeDamageRoll": "",
+        "rangedDamageRoll": "1d6",
+        "notes": [
+          "*Two-handed weapons use a d16 on initiative checks."
+        ],
+        "isRanged": true,
+        "range": "50/100/150",
+        "name": "Shortbow",
+        "costInCopper": 2500.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Deer pelt",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Indentured servant",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Locket",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Jester",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "",
+        "rangedDamageRoll": "1d4",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "20/40/60**",
+        "name": "Dart",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Silk clothes",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Jeweler",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Gem worth 20GP",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Locksmith",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Fine tools",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Mendicant",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Cheese dip",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Mercenary",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d8",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Longsword",
+        "costInCopper": 1000.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Hide armor (equipped)",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Merchant",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "4GP, 14SP, 27CP",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Miller/baker",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Flour, 1 lb.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Minstrel",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Ukulele",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Noble",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d8",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Longsword",
+        "costInCopper": 1000.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Gold ring worth 10GP",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Orphan",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Rag doll",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Ostler",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Staff",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "notes": [],
+      "name": "Bridle and Bit",
+      "costInCopper": 200.0
+    }
+  },
+  {
+    "name": "Outlaw",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d6",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Short Sword",
+        "costInCopper": 700.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Leather armor (equipped)",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Rope maker",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Knife (as dagger)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Rope, 100'",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Scribe",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "",
+        "rangedDamageRoll": "1d4",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "20/40/60**",
+        "name": "Dart",
+        "costInCopper": 50.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Parchment, 10 sheets",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Shaman",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d6",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Mace",
+        "costInCopper": 500.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Herbs, 1 lb.",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Slave",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Strange-looking rock",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Smuggler",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "",
+        "rangedDamageRoll": "1d4",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "40/80/160**",
+        "name": "Sling",
+        "costInCopper": 200.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Waterproof sack",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Soldier",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d8",
+        "rangedDamageRoll": "",
+        "notes": [
+          "#These weapons inflict 2x damage on a mounted charge."
+        ],
+        "isRanged": false,
+        "range": "",
+        "name": "Spear#",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Shield (equipped)",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Squire",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d8",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Longsword",
+        "costInCopper": 1000.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Steel helmet",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Tax collector",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d8",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Longsword",
+        "costInCopper": 1000.0
+      }
+    ],
+    "tradeGood": {
+      "name": "100CP",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Trapper",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "",
+        "rangedDamageRoll": "1d4",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "40/80/160**",
+        "name": "Sling",
+        "costInCopper": 200.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Badger pelt",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Urchin",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Stick (as club)",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Begging bowl",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Wainwright",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "",
+        "notes": [],
+        "isRanged": false,
+        "range": "",
+        "name": "Club",
+        "costInCopper": 300.0
+      }
+    ]
+  },
+  {
+    "name": "Weaver",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Fine suit of clothes",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Wizard's apprentice",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d4",
+        "rangedDamageRoll": "1d10",
+        "notes": [
+          "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+          "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Dagger†‡",
+        "costInCopper": 300.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Black grimoire",
+      "costInCopper": 0.0
+    }
+  },
+  {
+    "name": "Woodcutter",
+    "trainedWeapons": [
+      {
+        "wield": "ONE_HANDED",
+        "meleeDamageRoll": "1d6",
+        "rangedDamageRoll": "1d6",
+        "notes": [
+          "**Strength mod applies to damage at close range only."
+        ],
+        "isRanged": true,
+        "range": "10/20/30**",
+        "name": "Handaxe",
+        "costInCopper": 400.0
+      }
+    ],
+    "tradeGood": {
+      "name": "Bundle of wood",
+      "costInCopper": 0.0
+    }
+  }
+]

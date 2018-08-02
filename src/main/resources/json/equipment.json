@@ -1,0 +1,217 @@
+[
+  {
+    "notes": [],
+    "name": "Backpack",
+    "costInCopper": 200.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Candle",
+    "costInCopper": 1.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Chain, 10'",
+    "costInCopper": 3000.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Chalk, 1 piece",
+    "costInCopper": 1.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Chest, empty",
+    "costInCopper": 200.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Crowbar",
+    "costInCopper": 200.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Flask, empty",
+    "costInCopper": 3.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Flint & steel",
+    "costInCopper": 15.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Grappling hook",
+    "costInCopper": 100.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Hammer, small",
+    "costInCopper": 50.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Holy symbol",
+    "costInCopper": 2500.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [
+      "**½ pint of holy water inflicts 1d4 damage to undead."
+    ],
+    "name": "Holy water, 1 vial**",
+    "costInCopper": 2500.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Iron spike",
+    "costInCopper": 10.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Lantern",
+    "costInCopper": 1000.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Mirror, hand-sized",
+    "costInCopper": 1000.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [
+      "***When ignited and tossed, inflicts 1d6 + fire damage.",
+      "A flask of oil burns for six hours in a lantern."
+    ],
+    "name": "Oil, 1 flask***",
+    "costInCopper": 20.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Pole, 10'",
+    "costInCopper": 15.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Rations, 1 day",
+    "costInCopper": 5.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Rope, 50'",
+    "costInCopper": 25.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Sack, large",
+    "costInCopper": 12.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Sack, small",
+    "costInCopper": 8.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Thieves' tools",
+    "costInCopper": 2500.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Torch",
+    "costInCopper": 1.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Waterskin",
+    "costInCopper": 50.0,
+    "type": "EQUIPMENT"
+  },
+  {
+    "notes": [],
+    "name": "Bridle and Bit",
+    "costInCopper": 200.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Donkey",
+    "costInCopper": 800.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Mule",
+    "costInCopper": 800.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Feed, daily",
+    "costInCopper": 5.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Horse, regular",
+    "costInCopper": 7500.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Horse, warhorse",
+    "costInCopper": 20000.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Pony",
+    "costInCopper": 3000.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Saddle, pack",
+    "costInCopper": 1500.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Saddle, riding",
+    "costInCopper": 3000.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Saddlebags",
+    "costInCopper": 200.0,
+    "type": "MOUNTED"
+  },
+  {
+    "notes": [],
+    "name": "Stabling, daily",
+    "costInCopper": 5.0,
+    "type": "MOUNTED"
+  }
+]

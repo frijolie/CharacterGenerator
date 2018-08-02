@@ -1,0 +1,14 @@
+#regenerateButton {
+  -fx-background-image: url(/images/refresh.png);
+  -fx-min-height: 30px;
+  -fx-pref-height: 30px;
+  -fx-max-height: 30px;
+  -fx-min-width: 30px;
+  -fx-pref-width: 30px;
+  -fx-max-width: 30px;
+  -fx-alignment: center;
+  -fx-content-display: graphic-only;
+  -fx-background-size: 25,25;
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}

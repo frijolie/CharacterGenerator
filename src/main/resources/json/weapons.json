@@ -1,0 +1,265 @@
+[
+  {
+    "wield": "TWO_HANDED",
+    "name": "Battleaxe",
+    "meleeDamageRoll": "1d10",
+    "rangedDamageRoll": "",
+    "notes": [
+      "*Two-handed weapons use a d16 on initiative checks."
+    ],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 700.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Blackjack†",
+    "meleeDamageRoll": "1d3/2d6***",
+    "rangedDamageRoll": "",
+    "notes": [
+      "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+      "***Damage dealt is always subdual damage."
+    ],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 300.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Blowgun†",
+    "meleeDamageRoll": "1d3",
+    "rangedDamageRoll": "1d5",
+    "notes": [],
+    "isRanged": true,
+    "range": "20/40/60",
+    "costInCopper": 600.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Club",
+    "meleeDamageRoll": "1d4",
+    "rangedDamageRoll": "",
+    "notes": [],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 300.0
+  },
+  {
+    "wield": "TWO_HANDED",
+    "name": "Crossbow",
+    "meleeDamageRoll": "",
+    "rangedDamageRoll": "1d6",
+    "notes": [
+      "*Two-handed weapons use a d16 on initiative checks."
+    ],
+    "isRanged": true,
+    "range": "80/160/240",
+    "costInCopper": 3000.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Dagger†‡",
+    "meleeDamageRoll": "1d4",
+    "rangedDamageRoll": "1d10",
+    "notes": [
+      "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+      "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+      "**Strength mod applies to damage at close range only."
+    ],
+    "isRanged": true,
+    "range": "10/20/30**",
+    "costInCopper": 300.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Dart",
+    "meleeDamageRoll": "",
+    "rangedDamageRoll": "1d4",
+    "notes": [
+      "**Strength mod applies to damage at close range only."
+    ],
+    "isRanged": true,
+    "range": "20/40/60**",
+    "costInCopper": 50.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Flail",
+    "meleeDamageRoll": "1d6",
+    "rangedDamageRoll": "",
+    "notes": [],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 600.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Garrote†",
+    "meleeDamageRoll": "1/3d4",
+    "rangedDamageRoll": "",
+    "notes": [
+      "†Thieves, when backstabbing, use the 2nd damage value, all others use the 1st."
+    ],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 200.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Handaxe",
+    "meleeDamageRoll": "1d6",
+    "rangedDamageRoll": "1d6",
+    "notes": [
+      "**Strength mod applies to damage at close range only."
+    ],
+    "isRanged": true,
+    "range": "10/20/30**",
+    "costInCopper": 400.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Javelin",
+    "meleeDamageRoll": "1d6",
+    "rangedDamageRoll": "1d6",
+    "notes": [
+      "**Strength mod applies to damage at close range only."
+    ],
+    "isRanged": true,
+    "range": "30/60/90**",
+    "costInCopper": 100.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Lance#",
+    "meleeDamageRoll": "1d12",
+    "rangedDamageRoll": "",
+    "notes": [
+      "#These weapons inflict 2x damage on a mounted charge."
+    ],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 2500.0
+  },
+  {
+    "wield": "TWO_HANDED",
+    "name": "Longbow",
+    "meleeDamageRoll": "",
+    "rangedDamageRoll": "1d6",
+    "notes": [
+      "*Two-handed weapons use a d16 on initiative checks."
+    ],
+    "isRanged": true,
+    "range": "70/140/210",
+    "costInCopper": 4000.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Longsword",
+    "meleeDamageRoll": "1d8",
+    "rangedDamageRoll": "",
+    "notes": [],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 1000.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Mace",
+    "meleeDamageRoll": "1d6",
+    "rangedDamageRoll": "",
+    "notes": [],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 500.0
+  },
+  {
+    "wield": "TWO_HANDED",
+    "name": "Polearm",
+    "meleeDamageRoll": "1d10",
+    "rangedDamageRoll": "",
+    "notes": [
+      "*Two-handed weapons use a d16 on initiative checks."
+    ],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 700.0
+  },
+  {
+    "wield": "TWO_HANDED",
+    "name": "Shortbow",
+    "meleeDamageRoll": "",
+    "rangedDamageRoll": "1d6",
+    "notes": [
+      "*Two-handed weapons use a d16 on initiative checks."
+    ],
+    "isRanged": true,
+    "range": "50/100/150",
+    "costInCopper": 2500.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Short Sword",
+    "meleeDamageRoll": "1d6",
+    "rangedDamageRoll": "",
+    "notes": [],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 700.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Sling",
+    "meleeDamageRoll": "",
+    "rangedDamageRoll": "1d4",
+    "notes": [
+      "**Strength mod applies to damage at close range only."
+    ],
+    "isRanged": true,
+    "range": "40/80/160**",
+    "costInCopper": 200.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Spear#",
+    "meleeDamageRoll": "1d8",
+    "rangedDamageRoll": "",
+    "notes": [
+      "#These weapons inflict 2x damage on a mounted charge."
+    ],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 300.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Staff",
+    "meleeDamageRoll": "1d4",
+    "rangedDamageRoll": "",
+    "notes": [],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 50.0
+  },
+  {
+    "wield": "TWO_HANDED",
+    "name": "Two-handed Sword",
+    "meleeDamageRoll": "1d10",
+    "rangedDamageRoll": "",
+    "notes": [
+      "*Two-handed weapons use a d16 on initiative checks."
+    ],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 1500.0
+  },
+  {
+    "wield": "ONE_HANDED",
+    "name": "Warhammer",
+    "meleeDamageRoll": "1d8",
+    "rangedDamageRoll": "",
+    "notes": [],
+    "isRanged": false,
+    "range": "",
+    "costInCopper": 500.0
+  }
+]

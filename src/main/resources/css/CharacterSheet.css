@@ -1,0 +1,340 @@
+#characterSheet {
+  -fx-background-image: url(/images/sheet.jpg);
+  -fx-min-width: 1118px;
+  -fx-min-height: 861px;
+}
+
+#charName {
+  -fx-alignment: center;
+  -fx-min-height: 42px;
+  -fx-pref-height: 42px;
+  -fx-max-height: 42px;
+  -fx-min-width: 225px;
+  -fx-pref-width: 225px;
+  -fx-max-width: 225px;
+  -fx-font-weight: bold;
+  -fx-font-family: 'Aclonica', serif;
+  -fx-font-size: 1.6em;
+  -fx-region-border: null;
+  -fx-region-background: null;
+}
+
+#charTitle {
+  -fx-alignment: center;
+  -fx-min-height: 35px;
+  -fx-pref-height: 35px;
+  -fx-max-height: 35px;
+  -fx-min-width: 205px;
+  -fx-pref-width: 205px;
+  -fx-max-width: 205px;
+  -fx-font-size: 1.25em;
+  -fx-font-weight: bold;
+}
+
+#occupation {
+  -fx-min-height: 27px;
+  -fx-pref-height: 27px;
+  -fx-max-height: 27px;
+  -fx-min-width: 135px;
+  -fx-pref-width: 135px;
+  -fx-max-width: 135px;
+  -fx-alignment: center;
+  -fx-font-size: 1.15em;
+}
+
+#charClass {
+  -fx-alignment: center;
+  -fx-min-width: 110px;
+  -fx-pref-width: 110px;
+  -fx-max-width: 110px;
+  -fx-min-height: 27px;
+  -fx-pref-height: 27px;
+  -fx-max-height: 27px;
+  -fx-font-size: 1.2em;
+}
+
+.text-field {
+  -fx-alignment: center;
+  -fx-border-width: 1px;
+  -fx-text-fill: black;
+  -fx-region-background: null;
+}
+
+.combo-box {
+  -fx-background-color: transparent;
+  -fx-region-background: null;
+  -fx-max-height: 22px;
+  -fx-min-height: 22px;
+  -fx-pref-height: 22px;
+  -fx-pref-width: 105px;
+  -fx-min-width: 105px;
+  -fx-max-width: 105px;
+  -fx-font-size: 1em;
+  -fx-font-family: sans-serif;
+  -fx-cursor: text;
+}
+
+.combo-box .list-cell {
+  -fx-alignment: center;
+  -fx-background-color: transparent;
+}
+
+.combo-box-popup .list-cell {
+  -fx-background-color: white;
+}
+
+.combo-box-popup .list-cell:hover {
+  -fx-background-color: black;
+  -fx-text-fill: white;
+}
+
+.combo-box .arrow, .combo-box .arrow-button {
+  -fx-background-color: transparent;
+  -fx-padding: 0 0 0 -7;
+}
+
+.list-view {
+  -fx-orientation: vertical;
+  -fx-region-background: null;
+  -fx-region-border: null;
+}
+
+.list-cell {
+  -fx-text-fill: black;
+  -fx-font-size: 1em;
+}
+
+.list-cell:empty {
+  -fx-background-color: white;
+}
+
+.list-cell:filled:hover {
+  -fx-background-color: black;
+  -fx-text-fill: white;
+}
+
+.list-cell:filled:selected {
+  -fx-background-color: -fx-color;
+}
+
+.list-cell:filled:selected:hover {
+  -fx-background-color: black;
+  -fx-text-fill: white;
+}
+
+.combatBasics {
+  -fx-min-height: 20px;
+  -fx-max-height: 20px;
+  -fx-pref-height: 20px;
+  -fx-min-width: 55px;
+  -fx-pref-width: 55px;
+  -fx-max-width: 55px;
+  -fx-region-border: null;
+  -fx-region-background: null;
+  -fx-font-weight: bold;
+  -fx-font-size: 1.25em;
+}
+
+.charACHP {
+  -fx-min-height: 70px;
+  -fx-pref-height: 70px;
+  -fx-max-height: 70px;
+  -fx-min-width: 75px;
+  -fx-pref-width: 75px;
+  -fx-max-width: 75px;
+  -fx-font-weight: bold;
+  -fx-font-size: 3em;
+}
+
+#maxHP {
+  -fx-min-height: 20px;
+  -fx-pref-height: 20px;
+  -fx-max-height: 20px;
+  -fx-min-width: 35px;
+  -fx-pref-width: 35px;
+  -fx-max-width: 35px;
+  -fx-font-weight: bold;
+}
+
+#speed, #xp {
+  -fx-font-size: 1.5em;
+  -fx-font-weight: bold;
+  -fx-region-border: null;
+  -fx-region-background: null;
+  -fx-min-height: 25px;
+  -fx-pref-height: 25px;
+  -fx-max-height: 25px;
+  -fx-min-width: 88px;
+  -fx-pref-width: 88px;
+  -fx-max-width: 88px;
+}
+
+#level {
+  -fx-min-height: 25px;
+  -fx-pref-height: 25px;
+  -fx-max-height: 25px;
+  -fx-min-width: 110px;
+  -fx-pref-width: 110px;
+  -fx-max-width: 110px;
+  -fx-font-weight: bold;
+  -fx-font-size: 1.5em;
+}
+
+.statScore {
+  -fx-min-height: 43px;
+  -fx-pref-height: 43px;
+  -fx-max-height: 43px;
+  -fx-min-width: 51px;
+  -fx-pref-width: 51px;
+  -fx-max-width: 51px;
+  -fx-font-weight: bold;
+  -fx-font-size: 2em;
+}
+
+.scoreMod {
+  -fx-min-height: 21px;
+  -fx-pref-height: 21px;
+  -fx-max-height: 21px;
+  -fx-min-width: 32px;
+  -fx-pref-width: 32px;
+  -fx-max-width: 32px;
+  -fx-font-weight: bold;
+  -fx-alignment: center-left;
+}
+
+.charSave {
+  -fx-background-radius: 18px;
+  -fx-min-height: 42px;
+  -fx-pref-height: 42px;
+  -fx-max-height: 42px;
+  -fx-min-width: 45px;
+  -fx-pref-width: 45px;
+  -fx-max-width: 45px;
+  -fx-font-weight: bold;
+  -fx-font-size: 1.75em;
+  -fx-border-width: 0;
+}
+
+#luckyRoll {
+  -fx-min-height: 30px;
+  -fx-pref-height: 30px;
+  -fx-max-height: 30px;
+  -fx-min-width: 85px;
+  -fx-pref-width: 85px;
+  -fx-max-width: 85px;
+}
+
+#meleeAttack, #meleeDamage, #missileAttack, #missileDamage {
+  -fx-min-height: 34px;
+  -fx-pref-height: 34px;
+  -fx-max-height: 34px;
+  -fx-min-width: 77px;
+  -fx-pref-width: 77px;
+  -fx-max-width: 77px;
+  -fx-font-weight: bold;
+  -fx-font-size: 1.25em;
+}
+
+#charLanguages {
+  -fx-min-height: 43px;
+  -fx-pref-height: 43px;
+  -fx-max-height: 43px;
+  -fx-min-width: 179px;
+  -fx-pref-width: 179px;
+  -fx-max-width: 179px;
+}
+
+#charWeapons {
+  -fx-min-height: 149px;
+  -fx-pref-height: 149px;
+  -fx-max-height: 149px;
+  -fx-min-width: 212px;
+  -fx-pref-width: 212px;
+  -fx-max-width: 212px;
+}
+
+#charTreasure {
+  -fx-min-height: 106px;
+  -fx-pref-height: 106px;
+  -fx-max-height: 106px;
+  -fx-min-width: 205px;
+  -fx-pref-width: 205px;
+  -fx-max-width: 205px;
+  -fx-region-background: null;
+  -fx-region-border: null;
+}
+
+#treasureQty {
+  -fx-pref-width: 63px;
+  -fx-text-alignment: right;
+  -fx-alignment: center;
+}
+
+#treasureName {
+  -fx-pref-width: 140px;
+  -fx-text-alignment: center;
+  -fx-alignment: center;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-button,
+.table-view *.scroll-bar:horizontal *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-arrow,
+.table-view *.scroll-bar:horizontal *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+.column-header {
+  -fx-size: 15;
+}
+
+#charEquipment {
+  -fx-min-height: 193px;
+  -fx-pref-height: 193px;
+  -fx-max-height: 193px;
+  -fx-min-width: 206px;
+  -fx-pref-width: 206px;
+  -fx-max-width: 206px;
+}
+
+#charArmor {
+  -fx-min-height: 57px;
+  -fx-pref-height: 57px;
+  -fx-max-height: 57px;
+  -fx-min-width: 205px;
+  -fx-pref-width: 205px;
+  -fx-max-width: 205px;
+}
+
+#charNotes {
+  -fx-min-height: 314px;
+  -fx-pref-height: 314px;
+  -fx-max-height: 314px;
+  -fx-min-width: 374px;
+  -fx-pref-width: 374px;
+  -fx-max-width: 374px;
+}
+
+#luckyRoll {
+  -fx-font-weight: bold;
+  -fx-font-size: 1.25em;
+}
+
+#maxHP {
+  -fx-font-size: 1.25em;
+  -fx-font-weight: bold;
+}
+
+#critTable {
+  -fx-font-family: serif;
+  -fx-font-size: 1.5em;
+}
