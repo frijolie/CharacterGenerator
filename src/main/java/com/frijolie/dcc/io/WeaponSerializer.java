@@ -3,6 +3,7 @@ package com.frijolie.dcc.io;
 import com.frijolie.dcc.model.inventory.DCCCurrency;
 import com.frijolie.dcc.model.inventory.Weapon;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class WeaponSerializer {
@@ -259,7 +260,7 @@ public class WeaponSerializer {
   }
 
   public final List<Weapon> getWeaponList() {
-    return weapons;
+    return Collections.unmodifiableList(weapons);
   }
 
   private void writeToJson() {

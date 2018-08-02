@@ -37,7 +37,6 @@ public class DCCCharacter {
   private HitPoints hitPoints;
   private IntegerProperty initiative;
   private ArmorClass armorClass;
-  private ArmorFactory armorFactory;
   private EquippedArmor equippedArmor;
   private ObjectProperty<CharacterClass> characterClass;
   private ObjectProperty<Occupation> occupation;
@@ -73,7 +72,6 @@ public class DCCCharacter {
     hitPoints = new HitPoints();
     luckyRoll = new LuckyRoll();
     initiative = new SimpleIntegerProperty(0);
-    armorFactory = new ArmorFactory();
     equippedArmor = new EquippedArmor();
     armorClass = new ArmorClass();
     occupation = new SimpleObjectProperty<>();
@@ -110,11 +108,11 @@ public class DCCCharacter {
     calculateSavingThrows();
     calculateHitPoints();
     calculateCombatBonuses();
-    calculateLuckyRollBonuses();
     calculateStartingArmor();
     calculateArmorClass(); // has to be after startingArmor
     getCharacterClass().setCharacterSpeed(getCharacterClass().getDefaultSpeed());
     calculateOccupation();
+    calculateLuckyRollBonuses();
   }
 
   /**
@@ -170,6 +168,10 @@ public class DCCCharacter {
     missileDamage.setBonus(0);
   }
 
+  /**
+   * Calculates the starting occupation for the character, which may affect the character class,
+   * starting weapon (weapons), and trade good (equipment), or treasure.
+   */
   private void calculateOccupation() {
     Occupation occupation = null;
     equipmentList.clear();
@@ -320,7 +322,7 @@ public class DCCCharacter {
     }
 
     equipmentList.add(getOccupation().getTradeGood());
-    weaponList.addAll(getOccupation().getStartingWeapon());
+    weaponList.add(getOccupation().getStartingWeapon());
   }
 
   /**
@@ -391,11 +393,12 @@ public class DCCCharacter {
         break;
       case 8:
         missileDamage.setBonus(luckMod.getModifier() + missileDamage.getBonus());
+        break;
       case 9:
-        //TODO add bonus to starting weapon -- need character class first
         Weapon startingWeapon = getOccupation().getStartingWeapon();
         String startingWeaponName = startingWeapon.getName();
-        startingWeapon.setName(startingWeaponName + "(" + luckMod.getModifier() + ")");
+        startingWeapon
+            .setName(String.format("%s (%+d)", startingWeaponName, luckMod.getModifier()));
         break;
       case 13:
         // TODO add bonus to spell checks -- need character class first (wizards and clerics)
@@ -633,10 +636,6 @@ public class DCCCharacter {
 
   public void setCharacterClass(CharacterClass characterClass) {
     this.characterClass.set(characterClass);
-  }
-
-  public void setArmorFactory(ArmorFactory armorFactory) {
-    this.armorFactory = armorFactory;
   }
 
   public void addCopper(int amount) {

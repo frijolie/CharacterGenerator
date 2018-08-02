@@ -9,6 +9,8 @@ import com.frijolie.dcc.view.AbilityScoreTextField;
 import com.frijolie.dcc.view.PositivePrefixTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
@@ -79,7 +81,8 @@ public class CharacterSheetController implements Initializable {
     stamina.textProperty().bind(character.getStamina().scoreProperty().asString());
     staminaMod.textProperty().bind(character.getStaminaMod().modifierProperty().asString());
     intelligence.textProperty().bind(character.getIntelligence().scoreProperty().asString());
-    intelligenceMod.textProperty().bind(character.getIntelligenceMod().modifierProperty().asString());
+    intelligenceMod.textProperty()
+        .bind(character.getIntelligenceMod().modifierProperty().asString());
     personality.textProperty().bind(character.getPersonality().scoreProperty().asString());
     personalityMod.textProperty().bind(character.getPersonalityMod().modifierProperty().asString());
     luck.textProperty().bind(character.getLuck().scoreProperty().asString());
@@ -104,7 +107,6 @@ public class CharacterSheetController implements Initializable {
     attack.textProperty().bind(character.getCharacterClass().attackBonusProperty().asString());
     xp.textProperty().bind(character.getCharacterClass().experiencePointsProperty().asString());
     level.textProperty().bind(character.getCharacterClass().characterLevelProperty().asString());
-    speed.textProperty().bind(character.getCharacterClass().characterSpeedProperty().asString());
     maxHP.textProperty().bind(character.getHitPoints().hitPointsProperty().asString());
     Tooltip maxHPTooltip = new Tooltip("0-level MaxHP = 1d4 + StaminaMod. Must be at least 1");
     hitPoints.textProperty().bind(character.getHitPoints().hitPointsProperty().asString());
@@ -115,7 +117,8 @@ public class CharacterSheetController implements Initializable {
     missileAttack.textProperty().bind(character.getMissileAttack().bonusProperty().asString());
     missileDamage.textProperty().bind(character.getMissileDamage().bonusProperty().asString());
     armorClass.textProperty().bind(character.getArmorClass().armorClassProperty().asString());
-    Tooltip acToolTip = new Tooltip("AC = 10 + AgilityModifier + Armor Bonus(es) + Magical Modifiers ");
+    Tooltip acToolTip = new Tooltip(
+        "AC = 10 + AgilityModifier + Armor Bonus(es) + Magical Modifiers ");
     armorClass.setTooltip(acToolTip);
     charArmor.setItems(character.getEquippedArmor().getArmorList());
     charArmor.setCellFactory(param -> new ListCell<>() {
@@ -138,7 +141,7 @@ public class CharacterSheetController implements Initializable {
       @Override
       protected void updateItem(Item item, boolean empty) {
         super.updateItem(item, empty);
-        if(empty || item == null) {
+        if (empty || item == null) {
           setText(null);
         } else {
           setText(item.getName());
@@ -150,17 +153,25 @@ public class CharacterSheetController implements Initializable {
       @Override
       protected void updateItem(Weapon weapon, boolean empty) {
         super.updateItem(weapon, empty);
-        if(empty || weapon == null) {
+        if (empty || weapon == null) {
           setText(null);
         } else {
           setText(weapon.getName());
         }
       }
     });
+    character.getWeaponList().addListener(new InvalidationListener() {
+      @Override
+      public void invalidated(Observable observable) {
+        charWeapons.refresh();
+      }
+    });
     charClass.setText(character.getCharacterClass().getClassName());
     occupation.setText(character.getOccupation().getName());
+    speed.setText(String.format("%d'", character.getCharacterClass().getCharacterSpeed()));
     character.characterClassProperty().addListener(((observable, oldValue, newValue) -> {
       charClass.setText(newValue.getClassName());
+      speed.setText(String.format("%d'", newValue.getCharacterSpeed()));
     }));
     character.occupationProperty().addListener(((observable, oldValue, newValue) -> {
       occupation.setText(newValue.getName());

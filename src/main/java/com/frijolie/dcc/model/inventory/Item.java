@@ -1,5 +1,8 @@
 package com.frijolie.dcc.model.inventory;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  * <p>Item represents a single item in Dungeon Crawl Classics.</p>
  *
@@ -17,6 +20,9 @@ public class Item {
    * The name of the item, represented by a word.
    */
   String name;
+
+  StringProperty nameProperty;
+
   /**
    * The cost of the item in copper pieces (CP)
    */
@@ -29,6 +35,7 @@ public class Item {
    */
   public Item(String name) {
     this.name = name;
+    nameProperty = new SimpleStringProperty(name);
   }
 
   /**
@@ -45,8 +52,18 @@ public class Item {
    *
    * @param name to be set
    */
-  public void setName(String name) {
+  public final void setName(String name) {
     this.name = name;
+    nameProperty.set(name);
+  }
+
+  /**
+   * Property of the name. Used for listening
+   *
+   * @return the String Property of the item name
+   */
+  public StringProperty nameProperty() {
+    return nameProperty;
   }
 
   /**

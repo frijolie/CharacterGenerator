@@ -45,10 +45,11 @@ public class Weapon extends Item implements Cloneable {
    */
   private String range;
 
-  public Weapon() {
-    this("");
-  }
-
+  /**
+   * Constructor.
+   *
+   * @param name to be set
+   */
   public Weapon(String name) {
     super(name);
     notes = new ArrayList<>();

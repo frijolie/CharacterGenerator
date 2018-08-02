@@ -1,6 +1,7 @@
 package com.frijolie.dcc.model.characterclass;
 
 import com.frijolie.dcc.model.inventory.Weapon;
+import javafx.beans.property.ReadOnlyIntegerProperty;
 import javafx.beans.property.ReadOnlyIntegerWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
@@ -225,8 +226,8 @@ public abstract class CharacterClass {
     return characterSpeed.get();
   }
 
-  public ReadOnlyIntegerWrapper characterSpeedProperty() {
-    return characterSpeed;
+  public ReadOnlyIntegerProperty characterSpeedProperty() {
+    return characterSpeed.getReadOnlyProperty();
   }
 
   public void setCharacterSpeed(int characterSpeed) {
