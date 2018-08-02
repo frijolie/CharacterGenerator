@@ -148,7 +148,7 @@ public class DCCCharacter {
    */
   private void calculateStartingArmor() {
     if (getCharacterClass().getCharacterLevel() == 0) {
-      equippedArmor.addArmor(armorFactory.getByName("Unarmored"));
+      equippedArmor.addArmor(ArmorFactory.getByName("Unarmored"));
     }
   }
 
@@ -320,7 +320,7 @@ public class DCCCharacter {
     }
 
     equipmentList.add(getOccupation().getTradeGood());
-    weaponList.addAll(getOccupation().getTrainedWeapons());
+    weaponList.addAll(getOccupation().getStartingWeapon());
   }
 
   /**
@@ -393,6 +393,9 @@ public class DCCCharacter {
         missileDamage.setBonus(luckMod.getModifier() + missileDamage.getBonus());
       case 9:
         //TODO add bonus to starting weapon -- need character class first
+        Weapon startingWeapon = getOccupation().getStartingWeapon();
+        String startingWeaponName = startingWeapon.getName();
+        startingWeapon.setName(startingWeaponName + "(" + luckMod.getModifier() + ")");
         break;
       case 13:
         // TODO add bonus to spell checks -- need character class first (wizards and clerics)

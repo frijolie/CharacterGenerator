@@ -1,7 +1,5 @@
 package com.frijolie.dcc.model.inventory;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -25,7 +23,7 @@ public class Occupation implements Cloneable {
   /**
    * A list of trained weapons given by the chosen occupation.
    */
-  private List<Weapon> trainedWeapons;
+  private Weapon startingWeapon;
 
   /**
    * Trade good given by the chosen occupation. Trade Goods will not always be "standard"
@@ -39,7 +37,6 @@ public class Occupation implements Cloneable {
    * @param name to be given to the occupation
    */
   public Occupation(String name) {
-    trainedWeapons = new ArrayList<>();
     this.name = name;
   }
 
@@ -66,8 +63,8 @@ public class Occupation implements Cloneable {
    *
    * @return the weapon that is trained by this occupation
    */
-  public List<Weapon> getTrainedWeapons() {
-    return trainedWeapons;
+  public Weapon getStartingWeapon() {
+    return startingWeapon;
   }
 
   /**
@@ -76,24 +73,10 @@ public class Occupation implements Cloneable {
    * @param weapon to be added to the list
    * @throws NullPointerException if the weapon arg is null
    */
-  public final void addTrainedWeapon(Weapon weapon) {
+  public final void setStartingWeapon(Weapon weapon) {
     Objects.requireNonNull(weapon,
         "You cannot add a weapon to the trained weapon list if it is null");
-    // TODO don't add trained weapon if it's already on the list
-    trainedWeapons.add(weapon);
-  }
-
-  /**
-   * Clears and adds the contents of the list to trained weapons
-   *
-   * @param weaponList to be added
-   * @throws NullPointerException if the weaponList arg is null
-   */
-  public final void addTrainedWeapons(List<Weapon> weaponList) {
-    Objects.requireNonNull(weaponList,
-        "You cannot add a list to trained weapons if it is null");
-    trainedWeapons.clear();
-    trainedWeapons.addAll(weaponList);
+    startingWeapon = weapon;
   }
 
   /**
