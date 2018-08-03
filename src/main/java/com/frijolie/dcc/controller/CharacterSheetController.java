@@ -10,7 +10,6 @@ import com.frijolie.dcc.view.PositivePrefixTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
@@ -142,8 +141,10 @@ public class CharacterSheetController implements Initializable {
       protected void updateItem(Item item, boolean empty) {
         super.updateItem(item, empty);
         if (empty || item == null) {
+          setVisible(false);
           setText(null);
         } else {
+          setVisible(true);
           setText(item.getName());
         }
       }
@@ -156,19 +157,16 @@ public class CharacterSheetController implements Initializable {
         if (empty || weapon == null) {
           setText(null);
         } else {
+          setText("");
           setText(weapon.getName());
         }
       }
     });
-    character.getWeaponList().addListener(new InvalidationListener() {
-      @Override
-      public void invalidated(Observable observable) {
+    character.getWeaponList().addListener((InvalidationListener) (observable) -> {
         charWeapons.refresh();
-      }
     });
     charClass.setText(character.getCharacterClass().getClassName());
     occupation.setText(character.getOccupation().getName());
-    speed.setText(String.format("%d'", character.getCharacterClass().getCharacterSpeed()));
     character.characterClassProperty().addListener(((observable, oldValue, newValue) -> {
       charClass.setText(newValue.getClassName());
       speed.setText(String.format("%d'", newValue.getCharacterSpeed()));
@@ -176,5 +174,6 @@ public class CharacterSheetController implements Initializable {
     character.occupationProperty().addListener(((observable, oldValue, newValue) -> {
       occupation.setText(newValue.getName());
     }));
+    speed.setText(String.format("%d'", character.getCharacterClass().getCharacterSpeed()));
   }
 }

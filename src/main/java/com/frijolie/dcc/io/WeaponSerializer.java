@@ -8,9 +8,7 @@ import java.util.List;
 
 public class WeaponSerializer {
 
-  private DCCCurrency gold;
-  private DCCCurrency copper;
-  private DCCCurrency silver;
+  private DCCCurrency gold, copper, silver;
   private List<Weapon> weapons;
 
   public WeaponSerializer() {
@@ -263,7 +261,7 @@ public class WeaponSerializer {
     return Collections.unmodifiableList(weapons);
   }
 
-  private void writeToJson() {
+  void writeToJson() {
     JsonWriter.writeToJson(weapons, "weapons.json");
   }
 

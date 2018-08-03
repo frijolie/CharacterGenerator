@@ -2,13 +2,14 @@ package com.frijolie.dcc.model.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * <p>Weapon represents a single weapon used in the application.</p>
  *
  * <p>A weapon has several attributes.</p>
  */
-public class Weapon extends Item implements Cloneable {
+public class Weapon extends Item {
 
   /**
    * Determines if this weapon is ONE_HANDED or TWO_HANDED
@@ -177,8 +178,19 @@ public class Weapon extends Item implements Cloneable {
   }
 
   @Override
-  public Weapon clone() throws CloneNotSupportedException {
-    return (Weapon) super.clone();
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Weapon weapon = (Weapon) o;
+    return wield == weapon.wield && name.equals(weapon.getName());
   }
 
+  @Override
+  public int hashCode() {
+    return Objects.hash(name);
+  }
 }

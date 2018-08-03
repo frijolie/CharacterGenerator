@@ -1,20 +1,21 @@
-package com.frijolie.dcc.model.inventory;
+package com.frijolie.dcc.io;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.frijolie.dcc.io.EquipmentSerializer;
+import com.frijolie.dcc.model.inventory.Equipment;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-class EquipmentTest {
+class EquipmentSerializerTest {
 
   private List<Equipment> equipmentList;
   private EquipmentSerializer equipmentSerializer;
 
-  public EquipmentTest() {
+  EquipmentSerializerTest() {
     equipmentSerializer = new EquipmentSerializer();
     equipmentList = new ArrayList<>();
     equipmentList.addAll(equipmentSerializer.getEquipmentList());
@@ -30,7 +31,8 @@ class EquipmentTest {
   @Test
   void equipmentListShoudlContain35Elements() {
     assertEquals(35, equipmentList.size(),
-        "EquipmentList should contain 35 elements. Instead it contains: " + equipmentList.size());
+        "EquipmentList should contain 35 elements. Instead it contains: "
+            + equipmentList.size());
   }
 
   @Test
@@ -303,5 +305,11 @@ class EquipmentTest {
             .map(Equipment::getName)
             .anyMatch(e -> e.contains("Stabling")),
         "The list of equipment should contains daily stabling");
+  }
+
+  @Disabled
+  @Test
+  void writeToJson() {
+    equipmentSerializer.writeToJSON();
   }
 }

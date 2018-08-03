@@ -40,6 +40,7 @@ public class DCCCharacter {
   private EquippedArmor equippedArmor;
   private ObjectProperty<CharacterClass> characterClass;
   private ObjectProperty<Occupation> occupation;
+  private StartingEquipment startingEquipment;
   private DCCCurrency copper, silver, gold, electrum, platinum;
 
   /**
@@ -81,6 +82,13 @@ public class DCCCharacter {
     gold = new DCCCurrency(Type.GOLD);
     electrum = new DCCCurrency(Type.ELECTRUM);
     platinum = new DCCCurrency(Type.PLATINUM);
+    startingEquipment = new StartingEquipment();
+    equippedArmor.getArmorList().addListener(new ListChangeListener<Armor>() {
+      @Override
+      public void onChanged(Change<? extends Armor> c) {
+        armorClass.calculateArmorClass(agilityMod.getModifier(), equippedArmor.getArmorList());
+      }
+    });
     initialize();
   }
 
@@ -93,12 +101,6 @@ public class DCCCharacter {
    * is key.
    */
   private void initialize() {
-    equippedArmor.getArmorList().addListener(new ListChangeListener<Armor>() {
-      @Override
-      public void onChanged(Change<? extends Armor> c) {
-        armorClass.calculateArmorClass(agilityMod.getModifier(), equippedArmor.getArmorList());
-      }
-    });
     setCharacterClass(CharacterClassFactory.getCharacterClass(CharacterClassType.ZERO_LEVEL));
     getCharacterClass().setCharacterLevel(0);
     calculateAbilityScores();
@@ -110,9 +112,10 @@ public class DCCCharacter {
     calculateCombatBonuses();
     calculateStartingArmor();
     calculateArmorClass(); // has to be after startingArmor
-    getCharacterClass().setCharacterSpeed(getCharacterClass().getDefaultSpeed());
     calculateOccupation();
     calculateLuckyRollBonuses();
+    calculateStartingEquipment();
+    calculateStartingWealth();
   }
 
   /**
@@ -120,6 +123,13 @@ public class DCCCharacter {
    * This method is public because this is the only way I want to allow access.
    */
   public final void refresh() {
+    copper.setAmount(0);
+    silver.setAmount(0);
+    gold.setAmount(0);
+    equippedArmor.getArmorList().removeIf(armor -> armor.getArmorType() == ArmorType.SHIELD);
+    equipmentList.clear();
+    treasureList.clear();
+    weaponList.clear();
     initialize();
   }
 
@@ -174,16 +184,11 @@ public class DCCCharacter {
    */
   private void calculateOccupation() {
     Occupation occupation = null;
-    equipmentList.clear();
-    weaponList.clear();
-    treasureList.clear();
-    copper.setAmount(0);
-    silver.setAmount(0);
-    gold.setAmount(0);
-    equippedArmor.getArmorList().removeIf(armor -> armor.getArmorType() == ArmorType.SHIELD);
+
     var randomRoll = DiceRoller.rollDice(1, 100);
     occupation = OccupationFactory.getByIndex(randomRoll);
-    // check for character class
+
+    //  Need to modify occupation name if a demi-human
     if (randomRoll >= 19 && randomRoll <= 28) {
       // dwarf
       setCharacterClass(CharacterClassFactory.getCharacterClass(CharacterClassType.DWARF));
@@ -198,8 +203,21 @@ public class DCCCharacter {
       name = name.substring(0, 1).toUpperCase() + name.substring(1);
       occupation.setName(name);
       setOccupation(occupation);
-    } else if (randomRoll >= 39 && randomRoll <= 47) {
-      // farmer crop: 1 potato, 2 wheat, 3 turnip, 4 corn, 5 rice, 6 parsnip, 7 radish, 8 rutabaga
+    } else if (randomRoll >= 55 && randomRoll <= 64) {
+      // halfling
+      setCharacterClass(CharacterClassFactory.getCharacterClass(CharacterClassType.HALFLING));
+      String name = occupation.getName().replaceAll("Halfling ", "").trim();
+      name = name.substring(0, 1).toUpperCase() + name.substring(1);
+      occupation.setName(name);
+      setOccupation(occupation);
+    } else {
+      // need to reset back to zero-level (on refresh) if not demi-human
+      setCharacterClass(CharacterClassFactory.getCharacterClass(CharacterClassType.ZERO_LEVEL));
+      setOccupation(occupation);
+    }
+
+    if (randomRoll >= 39 && randomRoll <= 47) {
+      // is a farmer. Determine crop: potato, wheat, turnip, corn, rice, parsnip, radish, rutabaga
       Map<Integer, String> cropMap = new HashMap<>();
       cropMap.put(1, "Potato");
       cropMap.put(2, "Wheat");
@@ -210,10 +228,11 @@ public class DCCCharacter {
       cropMap.put(7, "Radish");
       cropMap.put(8, "Rutabaga");
       var crop = DiceRoller.rollDice(1, 7);
+      // modify the occupation name with specific crop
       occupation.setName(cropMap.get(crop) + " farmer");
       setOccupation(occupation);
 
-      // 1. Hen, 2. Sheep, 3. Goat, 4. Cow, 5. Duck, 6. Goose, 7. Mule
+      // Need a farm animal trade good. Determine which: Hen, Sheep, Goat, Cow, Duck, Goose, Mule
       Map<Integer, String> farmAnimal = new HashMap<>();
       farmAnimal.put(1, "Hen");
       farmAnimal.put(2, "Sheep");
@@ -223,22 +242,12 @@ public class DCCCharacter {
       farmAnimal.put(6, "Goose");
       farmAnimal.put(7, "Mule");
       var animal = DiceRoller.rollDice(1, 7);
-      equipmentList.add(new Item(farmAnimal.get(animal)));
-    } else if (randomRoll >= 55 && randomRoll <= 64) {
-      // halfling
-      setCharacterClass(CharacterClassFactory.getCharacterClass(CharacterClassType.HALFLING));
-      String name = occupation.getName().replaceAll("Halfling ", "").trim();
-      name = name.substring(0, 1).toUpperCase() + name.substring(1);
-      occupation.setName(name);
-      setOccupation(occupation);
-    } else {
-      setCharacterClass(CharacterClassFactory.getCharacterClass(CharacterClassType.ZERO_LEVEL));
-      setOccupation(occupation);
+      occupation.addTradeGood(new Item(farmAnimal.get(animal)));
     }
 
     if (randomRoll == 22) {
-      // dwarven herder: 1. Sow, 2. Sheep, 3. Goat, 4. Cow, 5. Duck, 6. Goose, 7. Mule
-      Map<Integer,String> herdAnimal = new HashMap<>();
+      // Dwarven herder trade good: Sow, Sheep, Goat, Cow, Duck, Goose, Mule
+      Map<Integer, String> herdAnimal = new HashMap<>();
       herdAnimal.put(1, "Sow");
       herdAnimal.put(2, "Sheep");
       herdAnimal.put(3, "Goat");
@@ -246,8 +255,8 @@ public class DCCCharacter {
       herdAnimal.put(5, "Duck");
       herdAnimal.put(6, "Goose");
       herdAnimal.put(7, "Mule");
-      var randomNumber = DiceRoller.rollDice(1,7);
-      equipmentList.add(new Item(herdAnimal.get(randomNumber)));
+      var randomNumber = DiceRoller.rollDice(1, 7);
+      occupation.addTradeGood(new Item(herdAnimal.get(randomNumber)));
     }
 
     if (randomRoll == 62) {
@@ -255,7 +264,7 @@ public class DCCCharacter {
       addGold(5);
       addSilver(10);
       addCopper(200);
-      treasureList.addAll(gold, silver, copper);
+      treasureList.addAll(gold, silver);
     }
 
     if (randomRoll == 63) {
@@ -265,8 +274,8 @@ public class DCCCharacter {
     }
 
     if (randomRoll == 67) {
-      // herder: 1. Herding dog, 2. Sheep, 3. Goat, 4. Cow, 5. Duck, 6. Goose, 7. Mule
-      Map<Integer,String> herdAnimal = new HashMap<>();
+      // Herder trade good: Herding dog, Sheep, Goat, Cow, Duck, Goose, Mule
+      Map<Integer, String> herdAnimal = new HashMap<>();
       herdAnimal.put(1, "Herding dog");
       herdAnimal.put(2, "Sheep");
       herdAnimal.put(3, "Goat");
@@ -274,8 +283,8 @@ public class DCCCharacter {
       herdAnimal.put(5, "Duck");
       herdAnimal.put(6, "Goose");
       herdAnimal.put(7, "Mule");
-      var randomNumber = DiceRoller.rollDice(1,7);
-      equipmentList.add(new Item(herdAnimal.get(randomNumber)));
+      var randomNumber = DiceRoller.rollDice(1, 7);
+      occupation.addTradeGood(new Item(herdAnimal.get(randomNumber)));
     }
 
     if (randomRoll == 75) {
@@ -288,7 +297,7 @@ public class DCCCharacter {
       addGold(4);
       addSilver(14);
       addCopper(27);
-      treasureList.addAll(gold, silver, copper);
+      treasureList.addAll(gold, silver);
     }
 
     if (randomRoll == 82) {
@@ -304,12 +313,10 @@ public class DCCCharacter {
     if (randomRoll == 91) {
       // tax collector
       addCopper(100);
-      treasureList.add(copper);
     }
 
     if (randomRoll == 95) {
-      // wainwright.
-      // trade good = pushcart of 1.tomatoes, 2.nothing, 3.straw, 4.your dead, 5.dirt, 6.rocks
+      // wainwright trade good = pushcart of: tomatoes, nothing, straw, your dead, dirt, rocks
       Map<Integer, String> contents = new HashMap<>();
       contents.put(1, "tomatoes");
       contents.put(2, "nothing");
@@ -371,6 +378,9 @@ public class DCCCharacter {
     }
   }
 
+  /**
+   * Applies the bonuses granted by the Birth Augur to the various skills or abilities
+   */
   private void calculateLuckyRollBonuses() {
     var luckyRoll = getLuckyRoll().getRollResult();
     switch (luckyRoll) {
@@ -442,15 +452,24 @@ public class DCCCharacter {
       case 30:
         // every ±1 Luck Mod = ± 5' speed
         int bonus = getLuckMod().getModifier() * 5;
-        int currentSpeed = getCharacterClass().getCharacterSpeed();
-        // TODO calculate character speed when it applies
-        getCharacterClass().setCharacterSpeed(currentSpeed + bonus);
+        if (bonus != 0) {
+          int currentSpeed = getCharacterClass().getCharacterSpeed();
+          getCharacterClass().setCharacterSpeed(getCharacterClass().getCharacterSpeed() + bonus);
+//          System.out.println(String.format("Speed went from %d' to %d'",currentSpeed, getCharacterClass().getCharacterSpeed()));
+          // TODO fix speed bonus when luckyRoll applies -- the value changes but not in the GUI
+        }
         break;
       default:
         break;
     }
   }
 
+  /**
+   * Triggers the calculation of the character's Hit Points. Needs to inject the character class
+   * bonus as well as stamina modifier.
+   *
+   * @see HitPoints#calculateHitPoints(int, int)
+   */
   private void calculateHitPoints() {
     getHitPoints().setHitPoints(0);
     // 0-Level + staminaMod + bonus (class hp/level)
@@ -464,11 +483,22 @@ public class DCCCharacter {
     }
   }
 
+  /**
+   * Triggers the calculation of the lucky roll. Based on the result, it adds the Birth Augur to
+   * character notes.
+   *
+   * @see LuckyRoll#calculateLuckyRoll()
+   */
   private void calculateLuckyRoll() {
     luckyRoll.calculateLuckyRoll();
     noteList.add(luckyRoll.getBirthAugur());
   }
 
+  /**
+   * Triggers the calculation of the six ability score values.
+   *
+   * @see AbilityScore#calculateAbilityScore()
+   */
   private void calculateAbilityScores() {
     strength.calculateAbilityScore();
     agility.calculateAbilityScore();
@@ -478,6 +508,11 @@ public class DCCCharacter {
     intelligence.calculateAbilityScore();
   }
 
+  /**
+   * Triggers the calculation of the six ability modifiers by injecting the AbilityScore values.
+   *
+   * @see AbilityModifier#calculateModifier(int)
+   */
   private void calculateAbilityModifiers() {
     strengthMod.calculateModifier(strength.getScore());
     agilityMod.calculateModifier(agility.getScore());
@@ -487,10 +522,31 @@ public class DCCCharacter {
     intelligenceMod.calculateModifier(intelligence.getScore());
   }
 
+  /**
+   * Sets the value of the three saving throws by injecting the respective AbilityModifier value
+   *
+   * @see SavingThrow#setSavingThrow(int)
+   */
   private void calculateSavingThrows() {
     reflexSave.setSavingThrow(agilityMod.getModifier());
     fortitudeSave.setSavingThrow(staminaMod.getModifier());
     willpowerSave.setSavingThrow(personalityMod.getModifier());
+  }
+
+  /**
+   * Generates the random amount of starting copper a character has. Randomness is a simulation of a
+   * roll of 5d12 dice.
+   */
+  private void calculateStartingWealth() {
+    var startingWealth = DiceRoller.rollDice(5, 12);
+    addCopper(startingWealth);
+    treasureList.add(copper);
+  }
+
+  private void calculateStartingEquipment() {
+    equipmentList.clear();
+    equipmentList.add(getOccupation().getTradeGood());
+    equipmentList.add(startingEquipment.calculateStartingEquipment());
   }
 
   public AbilityScore getStrength() {
@@ -626,47 +682,40 @@ public class DCCCharacter {
     return characterClass;
   }
 
-  public void setOccupation(Occupation occupation) {
+  private void setOccupation(Occupation occupation) {
     this.occupation.set(occupation);
   }
 
-  public void setInitiative(int initiative) {
+  private void setInitiative(int initiative) {
     this.initiative.set(initiative);
   }
 
-  public void setCharacterClass(CharacterClass characterClass) {
+  private void setCharacterClass(CharacterClass characterClass) {
     this.characterClass.set(characterClass);
   }
 
-  public void addCopper(int amount) {
+  private void addCopper(int amount) {
     setCopper(copper.getAmount() + amount);
   }
 
-  public void addSilver(int amount) {
+  private void addSilver(int amount) {
     setSilver(silver.getAmount() + amount);
   }
 
-  public void addGold(int amount) {
+  private void addGold(int amount) {
     setGold(gold.getAmount() + amount);
   }
 
-  public void setCopper(int amount) {
+  private void setCopper(int amount) {
     copper.setAmount(amount);
   }
 
-  public void setSilver(int amount) {
+  private void setSilver(int amount) {
     silver.setAmount(amount);
   }
 
-  public void setGold(int amount) {
+  private void setGold(int amount) {
     gold.setAmount(amount);
   }
 
-  public void setElectrum(int amount) {
-    electrum.setAmount(amount);
-  }
-
-  public void setPlatinum(int amount) {
-    platinum.setAmount(amount);
-  }
 }

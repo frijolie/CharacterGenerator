@@ -6,11 +6,33 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.Objects;
 
+/**
+ * <p>OccupationFactory is a class used to supply Occupations when called.</p>
+ *
+ * <p>OccupationFactory maintains a list of all possible occupations within the application. It
+ * supplies a single method to retrieve them via an index. Currently, the occupation is randomly
+ * determined by a dice roll. The result of the roll represents the index of the collection.</p>
+ *
+ * <p>As a future enhancement I would like to populate the list via I/O. The JSON is currently
+ * supplied and conveniently named "occupations.json". However, it is not utilized. I would be great
+ * to make this more dynamic. There could be some 3rd party or custom occupations that could be
+ * requested. In its current state, this is not possible.</p>
+ *
+ * <p>Currently, the collection (a map) is populated by a static block within the class.</p>
+ *
+ * @author Frijolie
+ * @version 0.1
+ */
 public class OccupationFactory {
 
+  /**
+   * A list of occupations. It is populated from {@link OccupationSerializer#getOccupationList()}
+   */
   private static List<Occupation> occupationList;
+  /**
+   * A map to provide an occupation given an index.
+   */
   private static Map<Integer, Occupation> occupationByIndex;
 
   static {
@@ -118,17 +140,19 @@ public class OccupationFactory {
     occupationByIndex.put(100, occupationList.get(79));
   }
 
+  /**
+   * Returns an occupation which corresponds to the supplied index.
+   *
+   * @param index to be used as the key for retrieval
+   * @return an Occupation at the given index
+   * @throws NoSuchElementException if the index arg is not within the collection
+   */
   public static Occupation getByIndex(int index) {
     if (occupationByIndex.containsKey(index)) {
-      try {
-        return occupationByIndex.get(index).clone();
-      } catch (CloneNotSupportedException e) {
-        e.printStackTrace();
-      }
+      return occupationByIndex.get(index);
     } else {
       throw new NoSuchElementException(index +
           " is not a valid index in occupationByIndex. Cannot return the occupation");
     }
-    return null;
   }
 }

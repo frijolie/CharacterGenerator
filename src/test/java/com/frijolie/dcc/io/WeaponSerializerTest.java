@@ -1,20 +1,21 @@
-package com.frijolie.dcc.model.inventory;
+package com.frijolie.dcc.io;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.frijolie.dcc.io.WeaponSerializer;
+import com.frijolie.dcc.model.inventory.Weapon;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-class WeaponTest {
+class WeaponSerializerTest {
 
   private List<Weapon> weapons;
   private WeaponSerializer weaponSerializer;
 
-  WeaponTest() {
+  WeaponSerializerTest() {
     weaponSerializer = new WeaponSerializer();
     weapons = new ArrayList<>();
     weapons.addAll(weaponSerializer.getWeaponList());
@@ -46,136 +47,157 @@ class WeaponTest {
     assertTrue(weapons.stream()
             .map(Weapon::getName)
             .map(x -> x.replaceAll("\\W", ""))
-            .anyMatch(x -> x.equals("Oil, 1 flask")),
+            .anyMatch(x -> x.equals("Blackjack")),
         "The list of weapons should include a Blackjack");
   }
 
   @Test
   void weaponsShouldContainABlowgun() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Blowgun")),
+    assertTrue(weapons.stream()
+            .map(Weapon::getName)
+            .map(x -> x.replaceAll("\\W", ""))
+            .anyMatch(x -> x.equals("Blowgun")),
         "The list of weapons should include a Blowgun");
   }
 
   @Test
   void weaponsShouldContainAClub() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Club")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Club")),
         "The list of weapons should include a Club");
   }
 
   @Test
   void weaponsShouldContainACrossbow() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Crossbow")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Crossbow")),
         "The list of weapons should include a Crossbow");
   }
 
   @Test
   void weaponsShouldContainADagger() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Dagger")),
+    assertTrue(weapons.stream()
+            .map(Weapon::getName)
+            .map(x -> x.replaceAll("\\W", ""))
+            .anyMatch(x -> x.equals("Dagger")),
         "The list of weapons should include a Dagger");
   }
 
 
   @Test
   void weaponsShouldContainADart() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Dart")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Dart")),
         "The list of weapons should include a Dart");
   }
 
   @Test
   void weaponsShouldContainAFlail() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Flail")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Flail")),
         "The list of weapons should include a Flail");
   }
 
   @Test
   void weaponsShouldContainAGarrote() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Garrote")),
+    assertTrue(weapons.stream()
+            .map(Weapon::getName)
+            .map(x -> x.replaceAll("\\W", ""))
+            .anyMatch(x -> x.equals("Garrote")),
         "The list of weapons should include a Garrote");
   }
 
   @Test
   void weaponsShouldContainAHandaxe() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Handaxe")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Handaxe")),
         "The list of weapons should include a Handaxe");
   }
 
   @Test
   void weaponsShouldContainAJavelin() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Javelin")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Javelin")),
         "The list of weapons should include a Javelin");
   }
 
   @Test
   void weaponsShouldContainALongbow() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Longbow")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Longbow")),
         "The list of weapons should include a Longbow");
   }
 
   @Test
   void weaponsShouldContainALance() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Lance")),
+    assertTrue(weapons.stream()
+            .map(Weapon::getName)
+            .map(x -> x.replaceAll("\\W", ""))
+            .anyMatch(x -> x.equals("Lance")),
         "The list of weapons should include a Lance");
   }
 
   @Test
   void weaponsShouldContainALongsword() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Longsword")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Longsword")),
         "The list of weapons should include a Longsword");
   }
 
   @Test
   void weaponsShouldContainAMace() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Mace")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Mace")),
         "The list of weapons should include a Mace");
   }
 
   @Test
   void weaponsShouldContainAPolearm() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Polearm")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Polearm")),
         "The list of weapons should include a Polearm");
   }
 
   @Test
   void weaponsShouldContainAShortbow() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Shortbow")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Shortbow")),
         "The list of weapons should include a Shortbow");
   }
 
   @Test
   void weaponsShouldContainAShortSword() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Short Sword")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Short Sword")),
         "The list of weapons should include a Short Sword");
   }
 
   @Test
   void weaponsShouldContainASling() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Sling")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Sling")),
         "The list of weapons should include a Sling");
   }
 
   @Test
   void weaponsShouldContainASpear() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Spear")),
+    assertTrue(weapons.stream()
+            .map(Weapon::getName)
+            .map(x -> x.replaceAll("\\W", ""))
+            .anyMatch(x -> x.equals("Spear")),
         "The list of weapons should include a Spear");
   }
 
   @Test
   void weaponsShouldContainAStaff() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Staff")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Staff")),
         "The list of weapons should include a Staff");
   }
 
   @Test
   void weaponsShouldContainATwoHandedSword() {
     assertTrue(
-        weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Two-handed Sword")),
+        weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Two-handed Sword")),
         "The list of weapons should include a Two-handed Sword");
   }
 
   @Test
   void weaponsShouldContainAWarhammer() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Warhammer")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Warhammer")),
         "The list of weapons should include a Warhammer");
+  }
+
+  @Disabled
+  @Test
+  void writeToJson() {
+    weaponSerializer.writeToJson();
   }
 
 }

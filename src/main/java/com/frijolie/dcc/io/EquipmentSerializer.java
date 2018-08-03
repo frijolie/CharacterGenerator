@@ -24,7 +24,7 @@ public class EquipmentSerializer {
   private void populateEquipment() {
 
     String HOLY_WATER = "**" + '\u00BD' + " pint of holy water inflicts 1d4 damage to undead.";
-    String OIL = "***When ignited and tossed, inflicts 1d6 + fire damage.";
+    String OIL = "***When ignited and tossed, inflicts 1d6 damage + fire.";
     String BURN = "A flask of oil burns for six hours in a lantern.";
 
     Equipment backpack = new Equipment("Backpack",
@@ -123,7 +123,8 @@ public class EquipmentSerializer {
     Equipment saddlebags = new Equipment("Saddlebags",
         DCCCurrency.convert(2, gold, copper));
 
-    Equipment stabling = new Equipment("Stabling, daily", 5);
+    Equipment stabling = new Equipment("Stabling, daily",
+        DCCCurrency.convert(5, silver, copper));
 
     equipmentList.add(backpack);
     equipmentList.add(candle);
@@ -166,7 +167,7 @@ public class EquipmentSerializer {
     return equipmentList;
   }
 
-  private void writeToJSON() {
+  void writeToJSON() {
     JsonWriter.writeToJson(equipmentList, "equipment.json");
   }
 }

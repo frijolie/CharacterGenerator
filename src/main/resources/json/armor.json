@@ -93,7 +93,7 @@
     "acBonus": 1,
     "checkPenalty": -1,
     "speedPenalty": 0,
-    "fumbleDie": "n/a",
+    "fumbleDie": "d8",
     "armorType": "SHIELD",
     "name": "Shield",
     "costInCopper": 1000.0

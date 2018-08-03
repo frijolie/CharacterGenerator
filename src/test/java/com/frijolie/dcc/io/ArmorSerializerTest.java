@@ -1,27 +1,23 @@
-package com.frijolie.dcc.model.inventory;
+package com.frijolie.dcc.io;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.frijolie.dcc.io.ArmorSerializer;
-import com.frijolie.dcc.model.inventory.DCCCurrency.Type;
+import com.frijolie.dcc.model.inventory.Armor;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-class ArmorTest {
+class ArmorSerializerTest {
 
   private List<Armor> armorList;
+  private ArmorSerializer armorSerializer;
 
-  ArmorTest() {
-    DCCCurrency gold = new DCCCurrency(Type.GOLD);
-    DCCCurrency silver = new DCCCurrency(Type.SILVER);
-    DCCCurrency copper = new DCCCurrency(Type.COPPER);
-    armorList = new ArrayList<>();
-    ArmorSerializer armorSerializer = new ArmorSerializer();
-    armorList.addAll(armorSerializer.getArmorList());
+  ArmorSerializerTest() {
+    armorSerializer = new ArmorSerializer();
+    armorList = new ArrayList<>(armorSerializer.getArmorList());
   }
 
   @Test
@@ -110,6 +106,12 @@ class ArmorTest {
         .findFirst()
         .orElseThrow();
     assertNotEquals(unarmored, shield);
+  }
+
+  @Disabled
+  @Test
+  void writeToJson() {
+    armorSerializer.writeToJson();
   }
 
 }

@@ -4,6 +4,7 @@ import com.frijolie.dcc.model.inventory.Armor;
 import com.frijolie.dcc.model.inventory.Armor.ArmorType;
 import com.frijolie.dcc.model.inventory.DCCCurrency;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ArmorSerializer {
@@ -97,7 +98,7 @@ public class ArmorSerializer {
     shield.setAcBonus(1);
     shield.setCheckPenalty(-1);
     shield.setSpeedPenalty(0);
-    shield.setFumbleDie("n/a");
+    shield.setFumbleDie("d8");
     shield.setArmorType(ArmorType.SHIELD);
 
     armorList.add(unarmored);
@@ -114,11 +115,11 @@ public class ArmorSerializer {
   }
 
   public final List<Armor> getArmorList() {
-    return armorList;
+    return Collections.unmodifiableList(armorList);
   }
 
-  private void writeToJson() {
-    JsonWriter.writeToJson(armorList,"armor.json");
+  void writeToJson() {
+    JsonWriter.writeToJson(getArmorList(), "armor.json");
   }
 
 }

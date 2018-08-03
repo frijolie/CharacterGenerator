@@ -230,16 +230,8 @@ public abstract class CharacterClass {
     return characterSpeed.getReadOnlyProperty();
   }
 
-  public void setCharacterSpeed(int characterSpeed) {
-    this.characterSpeed.set(characterSpeed);
-  }
-
-  public int getDefaultSpeed() {
-    return defaultSpeed;
-  }
-
-  public void setDefaultSpeed(int defaultSpeed) {
-    this.defaultSpeed = defaultSpeed;
+  public void setCharacterSpeed(int speed) {
+    characterSpeed.set(speed);
   }
 
   public String getHpPerLevel() {

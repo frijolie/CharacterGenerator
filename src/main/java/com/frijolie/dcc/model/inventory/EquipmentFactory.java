@@ -9,14 +9,14 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
- * <p>EquipmentFactory is a class used to provide equipment to other classes</p>
+ * <p>EquipmentFactory is a class used to provide Equipment to other classes</p>
  *
  * <p>EquipmentFactory maintains a list of all equipment used in the application. It provides
  * utility methods to retrieve a piece of equipment from the collection. They can be retrieved by
  * name or int index (of a map).</p>
  *
- * <p>At some later date, I would like to implement the equipment being populated by a
- * deserialization process. I have the json file, conveniently named equipment.json, prepared and
+ * <p>As a future enhancement, I would like to implement the equipment being populated by a
+ * deserialization process. I have the json file, conveniently named 'equipment.json', prepared and
  * eager to be used. I have encountered some issues with populating the list before it is accessed
  * so I've been receiving NullPointerExceptions. Therefore, I've shelved this functionality for
  * another date/time.</p>
@@ -71,11 +71,10 @@ public class EquipmentFactory {
   }
 
   /**
-   * Returns a piece of equipment from the map which is accessed by the int index. Left as a public
-   * method so it could be overridden by someone smarter or more efficient than me.
+   * Returns a piece of equipment from the map which is accessed by the int index.
    *
    * @param index to be used in retrieval
-   * @return a piece of equipment given the desired index (key)
+   * @return a piece Equipment given the desired index (key)
    * @throws IllegalArgumentException if the index arg does not exist in the map
    */
   public static Equipment getByIndex(int index) {
@@ -88,10 +87,11 @@ public class EquipmentFactory {
   }
 
   /**
-   * Returns a piece of equipment given the name. The name should match a piece of equipment name to
-   * be retrieved.
+   * Returns a piece of equipment given the name. Comparisons are done using {@code contains()} so
+   * you do not have to have the exact string for retrieval.
    *
    * @return a piece of equipment if the name exists.
+   * @throws NullPointerException if the name param is {@code null}
    * @throws NoSuchElementException if there was no match on the name arg
    */
   public static Equipment getByName(String name) {

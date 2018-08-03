@@ -87,7 +87,7 @@ public class AbilityModifier {
    *
    * @return the value of the ability modifier
    */
-  final int getModifier() {
+  public final int getModifier() {
     return modifier.get();
   }
 

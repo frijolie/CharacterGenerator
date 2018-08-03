@@ -24,7 +24,7 @@ public class Ammunition extends Item {
    *
    * @param name of the ammo to set.
    */
-  Ammunition(String name, int quantity) {
+  public Ammunition(String name, int quantity) {
     super(name);
     this.quantity = quantity;
   }

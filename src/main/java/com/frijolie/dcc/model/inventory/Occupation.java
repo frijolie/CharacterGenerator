@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author Frijolie
  * @version 0.1
  */
-public class Occupation implements Cloneable {
+public class Occupation {
 
   /**
    * The name of the occupation
@@ -97,8 +97,4 @@ public class Occupation implements Cloneable {
     this.tradeGood = tradeGood;
   }
 
-  @Override
-  protected Occupation clone() throws CloneNotSupportedException {
-    return (Occupation) super.clone();
-  }
 }

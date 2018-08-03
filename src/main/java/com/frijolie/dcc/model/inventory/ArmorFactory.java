@@ -12,10 +12,12 @@ import java.util.Objects;
  * <p>ArmorFactory maintains an inventory of all armor used in the application. It is stored in a
  * collection and provides methods for them to be retrieved.</p>
  *
- * <p>Currently, the armor list is hard coded with objects. There is a json file, conveniently
- * named'armor.json' which contains all the details necessary to deserialize them for use. However,
+ * <p>Currently, the armor list is hard coded with objects. There is a JSON file, conveniently
+ * named 'armor.json' which contains all the details necessary to deserialize them for use. However,
  * I've encountered issues loading them into collections before they're accessed. Need some
  * concurrency perhaps. I'll have to tackle this later.</p>
+ *
+ * <p>The collection containing the pieces of Armor are initialized within a static block</p>
  *
  * @author Frijolie
  * @version 0.1
@@ -32,11 +34,11 @@ public class ArmorFactory {
   }
 
   /**
-   * Returns a piece of armor, retrieved by the name. Left not final so it may be overridden by more
-   * efficiencies or craftiness.
+   * Returns a piece of armor, retrieved by the name. Comparisons are done with the 'contains'
+   * method so you don't have to have the exact name for retrieval.
    *
    * @param name the name of the armor to be retrieved
-   * @return the suit of armor that has been retrieved
+   * @return the suit of armor that has been discovered
    * @throws NullPointerException if the name param is null
    * @throws NoSuchElementException if the name of armor does not exist in the collection
    */

@@ -14,7 +14,6 @@ public class Wizard extends CharacterClass {
     super.setInitiativeBonus(0);
     super.setCharacterLevel(0);
     super.setCharacterSpeed(30);
-    super.setDefaultSpeed(30);
     super.setAttackBonus(0);
     super.setHpDicePerLevel(4);
     super.setHpPerLevel("1d4");

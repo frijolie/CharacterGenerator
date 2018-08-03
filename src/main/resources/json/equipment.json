@@ -2,216 +2,181 @@
   {
     "notes": [],
     "name": "Backpack",
-    "costInCopper": 200.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 200.0
   },
   {
     "notes": [],
     "name": "Candle",
-    "costInCopper": 1.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 1.0
   },
   {
     "notes": [],
     "name": "Chain, 10'",
-    "costInCopper": 3000.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 3000.0
   },
   {
     "notes": [],
     "name": "Chalk, 1 piece",
-    "costInCopper": 1.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 1.0
   },
   {
     "notes": [],
     "name": "Chest, empty",
-    "costInCopper": 200.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 200.0
   },
   {
     "notes": [],
     "name": "Crowbar",
-    "costInCopper": 200.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 200.0
   },
   {
     "notes": [],
     "name": "Flask, empty",
-    "costInCopper": 3.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 3.0
   },
   {
     "notes": [],
     "name": "Flint & steel",
-    "costInCopper": 15.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 15.0
   },
   {
     "notes": [],
     "name": "Grappling hook",
-    "costInCopper": 100.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 100.0
   },
   {
     "notes": [],
     "name": "Hammer, small",
-    "costInCopper": 50.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 50.0
   },
   {
     "notes": [],
     "name": "Holy symbol",
-    "costInCopper": 2500.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 2500.0
   },
   {
     "notes": [
       "**½ pint of holy water inflicts 1d4 damage to undead."
     ],
     "name": "Holy water, 1 vial**",
-    "costInCopper": 2500.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 2500.0
   },
   {
     "notes": [],
     "name": "Iron spike",
-    "costInCopper": 10.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 10.0
   },
   {
     "notes": [],
     "name": "Lantern",
-    "costInCopper": 1000.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 1000.0
   },
   {
     "notes": [],
     "name": "Mirror, hand-sized",
-    "costInCopper": 1000.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 1000.0
   },
   {
     "notes": [
-      "***When ignited and tossed, inflicts 1d6 + fire damage.",
+      "***When ignited and tossed, inflicts 1d6 damage + fire.",
       "A flask of oil burns for six hours in a lantern."
     ],
     "name": "Oil, 1 flask***",
-    "costInCopper": 20.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 20.0
   },
   {
     "notes": [],
     "name": "Pole, 10'",
-    "costInCopper": 15.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 15.0
   },
   {
     "notes": [],
     "name": "Rations, 1 day",
-    "costInCopper": 5.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 5.0
   },
   {
     "notes": [],
     "name": "Rope, 50'",
-    "costInCopper": 25.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 25.0
   },
   {
     "notes": [],
     "name": "Sack, large",
-    "costInCopper": 12.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 12.0
   },
   {
     "notes": [],
     "name": "Sack, small",
-    "costInCopper": 8.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 8.0
   },
   {
     "notes": [],
     "name": "Thieves' tools",
-    "costInCopper": 2500.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 2500.0
   },
   {
     "notes": [],
     "name": "Torch",
-    "costInCopper": 1.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 1.0
   },
   {
     "notes": [],
     "name": "Waterskin",
-    "costInCopper": 50.0,
-    "type": "EQUIPMENT"
+    "costInCopper": 50.0
   },
   {
     "notes": [],
     "name": "Bridle and Bit",
-    "costInCopper": 200.0,
-    "type": "MOUNTED"
+    "costInCopper": 200.0
   },
   {
     "notes": [],
     "name": "Donkey",
-    "costInCopper": 800.0,
-    "type": "MOUNTED"
+    "costInCopper": 800.0
   },
   {
     "notes": [],
     "name": "Mule",
-    "costInCopper": 800.0,
-    "type": "MOUNTED"
+    "costInCopper": 800.0
   },
   {
     "notes": [],
     "name": "Feed, daily",
-    "costInCopper": 5.0,
-    "type": "MOUNTED"
+    "costInCopper": 5.0
   },
   {
     "notes": [],
     "name": "Horse, regular",
-    "costInCopper": 7500.0,
-    "type": "MOUNTED"
+    "costInCopper": 7500.0
   },
   {
     "notes": [],
     "name": "Horse, warhorse",
-    "costInCopper": 20000.0,
-    "type": "MOUNTED"
+    "costInCopper": 20000.0
   },
   {
     "notes": [],
     "name": "Pony",
-    "costInCopper": 3000.0,
-    "type": "MOUNTED"
+    "costInCopper": 3000.0
   },
   {
     "notes": [],
     "name": "Saddle, pack",
-    "costInCopper": 1500.0,
-    "type": "MOUNTED"
+    "costInCopper": 1500.0
   },
   {
     "notes": [],
     "name": "Saddle, riding",
-    "costInCopper": 3000.0,
-    "type": "MOUNTED"
+    "costInCopper": 3000.0
   },
   {
     "notes": [],
     "name": "Saddlebags",
-    "costInCopper": 200.0,
-    "type": "MOUNTED"
+    "costInCopper": 200.0
   },
   {
     "notes": [],
     "name": "Stabling, daily",
-    "costInCopper": 5.0,
-    "type": "MOUNTED"
+    "costInCopper": 50.0
   }
 ]

@@ -122,6 +122,10 @@
   -fx-text-fill: white;
 }
 
+.list-cell:empty {
+  visibility: hidden;
+}
+
 .combatBasics {
   -fx-min-height: 20px;
   -fx-max-height: 20px;
