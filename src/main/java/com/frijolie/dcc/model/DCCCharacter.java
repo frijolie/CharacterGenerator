@@ -33,6 +33,7 @@ public class DCCCharacter {
   private ObservableList<Item> equipmentList;
   private ObservableList<Weapon> weaponList;
   private ObservableList<DCCCurrency> treasureList;
+  private ObservableList<String> alignment;
   private CombatBonus meleeAttack, meleeDamage, missileAttack, missileDamage;
   private HitPoints hitPoints;
   private IntegerProperty initiative;
@@ -51,6 +52,7 @@ public class DCCCharacter {
     equipmentList = FXCollections.observableArrayList();
     weaponList = FXCollections.observableArrayList();
     treasureList = FXCollections.observableArrayList();
+    alignment = FXCollections.observableArrayList("Choose...", "Lawful", "Neutral", "Chaotic");
     strength = new AbilityScore();
     agility = new AbilityScore();
     stamina = new AbilityScore();
@@ -657,13 +659,16 @@ public class DCCCharacter {
     return missileDamage;
   }
 
-
   public HitPoints getHitPoints() {
     return hitPoints;
   }
 
   public EquippedArmor getEquippedArmor() {
     return equippedArmor;
+  }
+
+  public ObservableList<String> getAlignment() {
+    return alignment;
   }
 
   public Occupation getOccupation() {

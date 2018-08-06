@@ -26,6 +26,8 @@ public class AppMain extends Application {
 
   @Override
   public void start(Stage primaryStage) {
+    // TODO need to execute a number of read tasks which populate factories
+    // TODO onSuccess() of the read and loads, then create the model class and start the GUI
     character = new DCCCharacter();
     primaryStage.getIcons().add(new Image("/images/d20.png"));
     primaryStage.setTitle("Character Sheet Generator");

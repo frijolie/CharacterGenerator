@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.beans.InvalidationListener;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
@@ -63,6 +64,9 @@ public class CharacterSheetController implements Initializable {
 
   @FXML
   private ListView<Item> charEquipment;
+
+  @FXML
+  private ComboBox<String> charAlignment;
 
 
   DCCCharacter character;
@@ -163,17 +167,20 @@ public class CharacterSheetController implements Initializable {
       }
     });
     character.getWeaponList().addListener((InvalidationListener) (observable) -> {
-        charWeapons.refresh();
+      charWeapons.refresh();
     });
     charClass.setText(character.getCharacterClass().getClassName());
     occupation.setText(character.getOccupation().getName());
     character.characterClassProperty().addListener(((observable, oldValue, newValue) -> {
       charClass.setText(newValue.getClassName());
       speed.setText(String.format("%d'", newValue.getCharacterSpeed()));
+      charAlignment.getSelectionModel().selectFirst();
     }));
     character.occupationProperty().addListener(((observable, oldValue, newValue) -> {
       occupation.setText(newValue.getName());
     }));
     speed.setText(String.format("%d'", character.getCharacterClass().getCharacterSpeed()));
+    charAlignment.setItems(character.getAlignment());
+    charAlignment.getSelectionModel().selectFirst();
   }
 }

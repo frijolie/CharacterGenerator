@@ -67,6 +67,4 @@ public class WeaponFactory {
     return gson.fromJson(weaponJson, Weapon.class);
   }
 
-
-
 }
