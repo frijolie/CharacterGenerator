@@ -5,6 +5,7 @@ import com.frijolie.dcc.model.inventory.Item;
 import com.frijolie.dcc.model.inventory.Occupation;
 import com.frijolie.dcc.model.inventory.WeaponFactory;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class OccupationSerializer {
@@ -17,7 +18,6 @@ public class OccupationSerializer {
   }
 
   private void populateOccupations() {
-
     Occupation alchemist = new Occupation("Alchemist");
     alchemist.setStartingWeapon(WeaponFactory.getByName("Staff"));
     alchemist.addTradeGood(EquipmentFactory.getByName("Oil"));
@@ -59,7 +59,7 @@ public class OccupationSerializer {
     butcher.addTradeGood(new Item("Side of beef"));
 
     Occupation caravanGuard = new Occupation("Caravan guard");
-    caravanGuard.setStartingWeapon(WeaponFactory.getByName("Short Sword"));
+    caravanGuard.setStartingWeapon(WeaponFactory.getByName("Short sword"));
     caravanGuard.addTradeGood(new Item("Linen, 1 yard"));
 
     Occupation cheesemaker = new Occupation("Cheesemaker");
@@ -175,7 +175,6 @@ public class OccupationSerializer {
     Occupation farmer = new Occupation("Farmer");
     farmer.setStartingWeapon(WeaponFactory.getByName("Spear"));
     farmer.getStartingWeapon().setName("Pitchfork (as spear)");
-//    farmer.addTradeGood(new Item("Hen**"));
 
     Occupation fortuneTeller = new Occupation("Fortune-teller");
     fortuneTeller.setStartingWeapon(WeaponFactory.getByName("Dagger"));
@@ -226,11 +225,11 @@ public class OccupationSerializer {
     halflingMariner.addTradeGood(new Item("Sailcloth, 2 yards"));
 
     Occupation halflingMoneyLender = new Occupation("Halfling moneylender");
-    halflingMoneyLender.setStartingWeapon(WeaponFactory.getByName("Short Sword"));
+    halflingMoneyLender.setStartingWeapon(WeaponFactory.getByName("Short sword"));
     halflingMoneyLender.addTradeGood(new Item("5GP, 10SP, 200CP"));
 
     Occupation halflingTrader = new Occupation("Halfling trader");
-    halflingTrader.setStartingWeapon(WeaponFactory.getByName("Short Sword"));
+    halflingTrader.setStartingWeapon(WeaponFactory.getByName("Short sword"));
     halflingTrader.addTradeGood(new Item("20SP"));
 
     Occupation halflingVagrant = new Occupation("Halfling vagrant");
@@ -301,7 +300,7 @@ public class OccupationSerializer {
     ostler.addTradeGood(EquipmentFactory.getByName("Bridle"));
 
     Occupation outlaw = new Occupation("Outlaw");
-    outlaw.setStartingWeapon(WeaponFactory.getByName("Short Sword"));
+    outlaw.setStartingWeapon(WeaponFactory.getByName("Short sword"));
     outlaw.addTradeGood(new Item("Leather armor (equipped)"));
 
     Occupation ropeMaker = new Occupation("Rope maker");
@@ -444,10 +443,11 @@ public class OccupationSerializer {
   }
 
   public final List<Occupation> getOccupationList() {
-    return occupations;
+    return Collections.unmodifiableList(occupations);
   }
 
   void writeToJson() {
     JsonWriter.writeToJson(occupations,"occupations.json");
   }
+
 }

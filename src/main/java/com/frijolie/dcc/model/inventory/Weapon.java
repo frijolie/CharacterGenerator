@@ -1,5 +1,6 @@
 package com.frijolie.dcc.model.inventory;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -9,130 +10,54 @@ import java.util.Objects;
  *
  * <p>A weapon has several attributes.</p>
  */
-public class Weapon extends Item {
+public abstract class Weapon extends Item {
 
   /**
    * Determines if this weapon is ONE_HANDED or TWO_HANDED
    */
-  private Wield wield;
+  Wield wield;
 
   /**
-   * The die which is used to determine the amount of damage this weapon will deal in melee, also
-   * known as hand-to-hand, combat. For example, 1d8 (you would roll 1 eight-sided die).
+   * The type of weapon. Values are: Melee, Ranged, or Both. This is used for deserialization.
    */
-  private String meleeDamageRoll;
-
-  /**
-   * The die which is used to determine the amount of damage this weapon will deal in ranged combat.
-   * For example, a thrown dagger uses a 1d10 (you would roll 1 ten-sided die)
-   */
-  private String rangedDamageRoll;
+  Type type;
 
   /**
    * Speical notes about this weapon. For example, "this weapon does 3x damage when used in mounted
    * combat"
    */
-  private List<String> notes;
+  List<String> notes;
 
   /**
-   * Is true if this weapon can be used in ranged combat.
+   * For deserialization, a zero-arg constructor.
    */
-  private boolean isRanged;
-
-  /**
-   * The amount of distance this weapon can be used if ranged. Will be three values separated by a
-   * forward slash '/'. They represent short, medium, and long range distances. For example,
-   * 20/40/60
-   */
-  private String range;
+  public Weapon() {
+  }
 
   /**
    * Constructor.
    *
    * @param name to be set
    */
-  public Weapon(String name) {
+  public Weapon(final String name) {
     super(name);
     notes = new ArrayList<>();
   }
 
   /**
-   * Enumeration of all possible weapon wield values. They are ONE_HANDED and TWO_HANDED
+   * Returns the weapon type. Values are: Melee, Ranged, or Both (ranged and melee)
+   * @return the weapon type
    */
-  public enum Wield {
-    ONE_HANDED, TWO_HANDED
+  public Type getType() {
+    return type;
   }
 
   /**
-   * Returns the die you roll to determine the amount of damage this weapon deals in melee combat
-   *
-   * @return the die to determine melee damage for this weapon. For example, "2d10"
+   * Sets the weapon type from the enum constant.
+   * @param type to be set
    */
-  public String getMeleeDamageRoll() {
-    return meleeDamageRoll;
-  }
-
-  /**
-   * Sets the die needed to determine melee damage for this weapon.
-   *
-   * @param meleeDamageRoll the die to set
-   */
-  public void setMeleeDamageRoll(String meleeDamageRoll) {
-    this.meleeDamageRoll = meleeDamageRoll;
-  }
-
-  /**
-   * Returns the die needed to determine ranged damage for this weapon.
-   *
-   * @return the die to determine ranged damage
-   */
-  public String getRangedDamageRoll() {
-    return rangedDamageRoll;
-  }
-
-  /**
-   * Sets the die for this weapons ranged damage
-   *
-   * @param rangedDamageRoll the die to set
-   */
-  public void setRangedDamageRoll(String rangedDamageRoll) {
-    this.rangedDamageRoll = rangedDamageRoll;
-  }
-
-  /**
-   * Returns true if this weapon can be used in ranged combat. Not all weapons can.
-   *
-   * @return {@code true} if this weapon can be used in ranged combat.
-   */
-  public boolean isRanged() {
-    return isRanged;
-  }
-
-  /**
-   * Sets the value for isRanged
-   *
-   * @param ranged true if can be thrown or used in ranged combat.
-   */
-  public void setIsRanged(boolean ranged) {
-    isRanged = ranged;
-  }
-
-  /**
-   * Returns a string value to represent short, medium, and long ranged distances.
-   *
-   * @return a string of ranged distances
-   */
-  public String getRange() {
-    return range;
-  }
-
-  /**
-   * Sets the value of ranged distances for this weapon
-   *
-   * @param range the value of ranged distance
-   */
-  public void setRange(String range) {
-    this.range = range;
+  public void setType(final Type type) {
+    this.type = type;
   }
 
   /**
@@ -149,8 +74,34 @@ public class Weapon extends Item {
    *
    * @param wield the value to set
    */
-  public void setWield(Wield wield) {
+  public void setWield(final Wield wield) {
     this.wield = wield;
+  }
+
+  /**
+   * Adds a note to this weapon if it doesn't already exist.
+   *
+   * @param note to be set
+   */
+  public void addNotes(final String note) {
+    if (notes.stream().noneMatch(s -> s.equals(note))) {
+      notes.add(note);
+    }
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    Weapon weapon = (Weapon) o;
+
+    // weapons are equal if the type and names are the same
+    return type == weapon.getType() && name.equals(weapon.getName());
   }
 
   /**
@@ -162,35 +113,23 @@ public class Weapon extends Item {
     return new ArrayList<>(notes);
   }
 
-  /**
-   * Adds a note to this weapon if it doesn't already exist.
-   *
-   * @param note to be set
-   */
-  public void addNotes(String note) {
-    if (notes.stream().noneMatch(s -> s.equals(note))) {
-      notes.add(note);
-    }
-  }
-
-  public void addNotes(List<String> notes) {
-    notes.addAll(notes);
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Weapon weapon = (Weapon) o;
-    return wield == weapon.wield && name.equals(weapon.getName());
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, type);
   }
+
+  /**
+   * Enumeration of all possible weapon wield values. They are ONE_HANDED and TWO_HANDED
+   */
+  public enum Wield {
+    ONE_HANDED,
+    TWO_HANDED
+  }
+
+  public enum Type {
+    @SerializedName("RANGED") RANGED,
+    @SerializedName("MELEE") MELEE,
+    @SerializedName("BOTH") BOTH
+  }
+
 }

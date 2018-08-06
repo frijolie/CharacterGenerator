@@ -1,5 +1,7 @@
 package com.frijolie.dcc.model.inventory;
 
+import java.util.Objects;
+
 /**
  * <p>This class represents a single piece of armor that is utilized in the application.</p>
  *
@@ -64,6 +66,12 @@ public class Armor extends Item {
    * An enumeration of all possible types of armor. This is used to equate equality of armor.
    */
   public enum ArmorType { ARMOR, SHIELD }
+
+  /**
+   * For deserialization, a zero-arg constructor.
+   */
+  private Armor() {
+  }
 
   /**
    * Constructor.
@@ -180,6 +188,11 @@ public class Armor extends Item {
   }
 
   @Override
+  public int hashCode() {
+    return Objects.hash(name, armorType);
+  }
+
+  @Override
   public String toString() {
     return name + " {" +
         "acBonus: " + acBonus +
@@ -188,4 +201,5 @@ public class Armor extends Item {
         "; fumbleDie: '" + fumbleDie + '\'' +
         "; costInCopper: " + costInCopper + '}';
   }
+
 }

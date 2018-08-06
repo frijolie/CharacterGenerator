@@ -29,6 +29,12 @@ public class Equipment extends Item {
   private ObservableList<String> notes;
 
   /**
+   * For deserialization, a zero-arg constructor.
+   */
+  private Equipment() {
+  }
+
+  /**
    * Constructor. Allows for a name and costInCopper to be set
    *
    * @param name the name to be set

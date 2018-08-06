@@ -12,7 +12,7 @@ import java.util.List;
 
 public class JsonWriter {
 
-  public static void writeToJson(List armorList, String filepath) {
+  public static void writeToJson(List list, String filepath) {
     GsonBuilder gsonBuilder = new GsonBuilder();
     gsonBuilder.setPrettyPrinting();
     gsonBuilder.disableHtmlEscaping();
@@ -21,7 +21,7 @@ public class JsonWriter {
 
     try(Writer writer = new OutputStreamWriter(
         new FileOutputStream(filepath), StandardCharsets.UTF_8)) {
-      gson.toJson(armorList,writer);
+      gson.toJson(list, writer);
     } catch (IOException e) {
       e.printStackTrace();
     }

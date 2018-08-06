@@ -4,6 +4,7 @@ import com.frijolie.dcc.model.inventory.DCCCurrency;
 import com.frijolie.dcc.model.inventory.DCCCurrency.Type;
 import com.frijolie.dcc.model.inventory.Equipment;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class EquipmentSerializer {
@@ -164,7 +165,7 @@ public class EquipmentSerializer {
   }
 
   public List<Equipment> getEquipmentList() {
-    return equipmentList;
+    return Collections.unmodifiableList(equipmentList);
   }
 
   void writeToJSON() {

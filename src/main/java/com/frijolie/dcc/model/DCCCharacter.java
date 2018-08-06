@@ -106,15 +106,15 @@ public class DCCCharacter {
     calculateAbilityScores();
     calculateAbilityModifiers();
     calculateLuckyRoll();
-    calculateAbilityRestrictions(); // has to be after LuckyRoll
+    calculateAbilityRestrictions(); // has to be after calculateLuckyRoll
     calculateSavingThrows();
     calculateHitPoints();
     calculateCombatBonuses();
     calculateStartingArmor();
-    calculateArmorClass(); // has to be after startingArmor
+    calculateArmorClass(); // has to be after calculateStartingArmor
     calculateOccupation();
     calculateLuckyRollBonuses();
-    calculateStartingEquipment();
+    calculateStartingEquipment(); // has to be after calculateOccupation
     calculateStartingWealth();
   }
 

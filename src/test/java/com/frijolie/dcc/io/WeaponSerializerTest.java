@@ -7,7 +7,6 @@ import com.frijolie.dcc.model.inventory.Weapon;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class WeaponSerializerTest {
@@ -52,7 +51,7 @@ class WeaponSerializerTest {
   }
 
   @Test
-  void weaponsShouldContainABlowgun() {
+  void weaponsShouldContainABlowgun_NeedToStripSpecialCharacter() {
     assertTrue(weapons.stream()
             .map(Weapon::getName)
             .map(x -> x.replaceAll("\\W", ""))
@@ -73,7 +72,7 @@ class WeaponSerializerTest {
   }
 
   @Test
-  void weaponsShouldContainADagger() {
+  void weaponsShouldContainADagger_NeedToStripSpecialCharacter() {
     assertTrue(weapons.stream()
             .map(Weapon::getName)
             .map(x -> x.replaceAll("\\W", ""))
@@ -95,7 +94,7 @@ class WeaponSerializerTest {
   }
 
   @Test
-  void weaponsShouldContainAGarrote() {
+  void weaponsShouldContainAGarrote_NeedToStripSpecialCharacter() {
     assertTrue(weapons.stream()
             .map(Weapon::getName)
             .map(x -> x.replaceAll("\\W", ""))
@@ -122,7 +121,7 @@ class WeaponSerializerTest {
   }
 
   @Test
-  void weaponsShouldContainALance() {
+  void weaponsShouldContainALance_NeedToStripSpecialCharacter() {
     assertTrue(weapons.stream()
             .map(Weapon::getName)
             .map(x -> x.replaceAll("\\W", ""))
@@ -156,8 +155,8 @@ class WeaponSerializerTest {
 
   @Test
   void weaponsShouldContainAShortSword() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Short Sword")),
-        "The list of weapons should include a Short Sword");
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Short sword")),
+        "The list of weapons should include a short sword");
   }
 
   @Test
@@ -167,7 +166,7 @@ class WeaponSerializerTest {
   }
 
   @Test
-  void weaponsShouldContainASpear() {
+  void weaponsShouldContainASpear_NeedToStripSpecialCharacter() {
     assertTrue(weapons.stream()
             .map(Weapon::getName)
             .map(x -> x.replaceAll("\\W", ""))
@@ -194,7 +193,6 @@ class WeaponSerializerTest {
         "The list of weapons should include a Warhammer");
   }
 
-  @Disabled
   @Test
   void writeToJson() {
     weaponSerializer.writeToJson();

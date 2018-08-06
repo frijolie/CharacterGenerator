@@ -24,11 +24,17 @@ public class Item {
   double costInCopper;
 
   /**
+   * For deserialization, a zero-arg constructor.
+   */
+  public Item() {
+  }
+
+  /**
    * Constructor. Must pass the name of the item.
    *
    * @param name to be set
    */
-  public Item(String name) {
+  public Item(final String name) {
     this.name = name;
   }
 
@@ -46,7 +52,7 @@ public class Item {
    *
    * @param name to be set
    */
-  public final void setName(String name) {
+  public final void setName(final String name) {
     this.name = name;
   }
 

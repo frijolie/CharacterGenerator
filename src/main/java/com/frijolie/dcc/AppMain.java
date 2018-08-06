@@ -6,7 +6,6 @@ import com.frijolie.dcc.controller.ToolbarController;
 import com.frijolie.dcc.model.DCCCharacter;
 import java.io.IOException;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
@@ -23,20 +22,18 @@ public class AppMain extends Application {
 
   @Override
   public void init() {
-    character = new DCCCharacter();
   }
 
   @Override
   public void start(Stage primaryStage) {
-    Platform.runLater(() -> {
-      primaryStage.getIcons().add(new Image("/images/d20.png"));
-      primaryStage.setTitle("Character Sheet Generator");
-      primaryStage.setResizable(false);
-      primaryStage.centerOnScreen();
-      primaryStage.setScene(createScene());
-      primaryStage.toFront();
-      primaryStage.show();
-    });
+    character = new DCCCharacter();
+    primaryStage.getIcons().add(new Image("/images/d20.png"));
+    primaryStage.setTitle("Character Sheet Generator");
+    primaryStage.setResizable(false);
+    primaryStage.centerOnScreen();
+    primaryStage.setScene(createScene());
+    primaryStage.toFront();
+    primaryStage.show();
   }
 
   private Scene createScene() {
@@ -91,4 +88,5 @@ public class AppMain extends Application {
     }
     return null;
   }
+
 }

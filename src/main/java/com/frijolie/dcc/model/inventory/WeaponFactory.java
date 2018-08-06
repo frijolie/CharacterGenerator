@@ -1,7 +1,9 @@
 package com.frijolie.dcc.model.inventory;
 
+import com.frijolie.dcc.io.WeaponDeserializer;
 import com.frijolie.dcc.io.WeaponSerializer;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -31,13 +33,14 @@ public class WeaponFactory {
    * A list of Weapons. Currently populated by {@link WeaponSerializer#getWeaponList()}
    */
   private static List<Weapon> weaponList;
-  /**
-   * A static object to serialize/deserialize a Weapon to return a deep copy
-   */
-  private static Gson gson = new Gson();
+  private static Gson gson;
+  private static GsonBuilder builder;
 
   static {
     weaponList = new ArrayList<>(new WeaponSerializer().getWeaponList());
+    builder = new GsonBuilder();
+    builder.registerTypeAdapter(Weapon.class, new WeaponDeserializer());
+    gson = builder.create();
   }
 
   /**
@@ -53,12 +56,17 @@ public class WeaponFactory {
     Objects.requireNonNull(weaponName,
         "You must pass a weaponName for a weapon to be retrieved.");
     Weapon weapon = weaponList.stream()
-        .filter(e -> e.getName().contains(weaponName))
+        .filter(w -> w.getName().contains(weaponName))
         .findFirst()
         .orElseThrow(() -> new NoSuchElementException(weaponName
             + " is not a valid weapon. It cannot be retrieved"));
-    // want to return a deep copy, need to serialize then deserialize
-    return gson.fromJson(gson.toJson(weapon), Weapon.class);
+
+    // serializing and de-serializing to provide a deep copy.
+    // many weapon names are modified when provided as a starting weapon. e.g. Hammer (as club)
+    String weaponJson = gson.toJson(weapon);
+    return gson.fromJson(weaponJson, Weapon.class);
   }
+
+
 
 }

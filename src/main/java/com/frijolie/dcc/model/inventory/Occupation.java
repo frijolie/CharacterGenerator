@@ -36,7 +36,7 @@ public class Occupation {
    *
    * @param name to be given to the occupation
    */
-  public Occupation(String name) {
+  public Occupation(final String name) {
     this.name = name;
   }
 
@@ -54,7 +54,7 @@ public class Occupation {
    *
    * @param name to be set
    */
-  public void setName(String name) {
+  public void setName(final String name) {
     this.name = name;
   }
 
@@ -73,9 +73,9 @@ public class Occupation {
    * @param weapon to be added to the list
    * @throws NullPointerException if the weapon arg is null
    */
-  public final void setStartingWeapon(Weapon weapon) {
+  public final void setStartingWeapon(final Weapon weapon) {
     Objects.requireNonNull(weapon,
-        "You cannot add a weapon to the trained weapon list if it is null");
+        "You cannot add a weapon if it is null");
     startingWeapon = weapon;
   }
 
@@ -93,7 +93,7 @@ public class Occupation {
    *
    * @param tradeGood to be set
    */
-  public void addTradeGood(Item tradeGood) {
+  public void addTradeGood(final Item tradeGood) {
     this.tradeGood = tradeGood;
   }
 
