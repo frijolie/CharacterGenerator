@@ -7,6 +7,7 @@ import com.frijolie.dcc.model.inventory.Weapon;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class WeaponSerializerTest {
@@ -37,7 +38,7 @@ class WeaponSerializerTest {
   void weaponsShouldContainABattleaxe() {
     assertTrue(weapons.stream()
             .map(Weapon::getName)
-            .anyMatch(x -> x.equals("Battleaxe")),
+            .anyMatch(x -> x.contains("Battleaxe")),
         "The list of weapons should include a Battleaxe");
   }
 
@@ -67,7 +68,7 @@ class WeaponSerializerTest {
 
   @Test
   void weaponsShouldContainACrossbow() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Crossbow")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Crossbow")),
         "The list of weapons should include a Crossbow");
   }
 
@@ -116,7 +117,7 @@ class WeaponSerializerTest {
 
   @Test
   void weaponsShouldContainALongbow() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Longbow")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Longbow")),
         "The list of weapons should include a Longbow");
   }
 
@@ -143,13 +144,13 @@ class WeaponSerializerTest {
 
   @Test
   void weaponsShouldContainAPolearm() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Polearm")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Polearm")),
         "The list of weapons should include a Polearm");
   }
 
   @Test
   void weaponsShouldContainAShortbow() {
-    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Shortbow")),
+    assertTrue(weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Shortbow")),
         "The list of weapons should include a Shortbow");
   }
 
@@ -183,7 +184,7 @@ class WeaponSerializerTest {
   @Test
   void weaponsShouldContainATwoHandedSword() {
     assertTrue(
-        weapons.stream().map(Weapon::getName).anyMatch(x -> x.equals("Two-handed Sword")),
+        weapons.stream().map(Weapon::getName).anyMatch(x -> x.contains("Two-handed sword")),
         "The list of weapons should include a Two-handed Sword");
   }
 
@@ -193,6 +194,7 @@ class WeaponSerializerTest {
         "The list of weapons should include a Warhammer");
   }
 
+  @Disabled
   @Test
   void writeToJson() {
     weaponSerializer.writeToJson();

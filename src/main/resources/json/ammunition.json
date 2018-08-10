@@ -1,21 +1,25 @@
 [
   {
     "quantity": 20,
+    "itemType": "AMMUNITION",
     "name": "Arrows",
     "costInCopper": 500.0
   },
   {
     "quantity": 1,
+    "itemType": "AMMUNITION",
     "name": "Arrow, silver-tipped",
     "costInCopper": 500.0
   },
   {
     "quantity": 30,
+    "itemType": "AMMUNITION",
     "name": "Quarrels",
     "costInCopper": 1000.0
   },
   {
     "quantity": 30,
+    "itemType": "AMMUNITION",
     "name": "Sling stones",
     "costInCopper": 100.0
   }

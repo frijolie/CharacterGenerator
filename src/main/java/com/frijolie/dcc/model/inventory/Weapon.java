@@ -13,20 +13,38 @@ import java.util.Objects;
 public abstract class Weapon extends Item {
 
   /**
-   * Determines if this weapon is ONE_HANDED or TWO_HANDED
-   */
-  Wield wield;
-
-  /**
-   * The type of weapon. Values are: Melee, Ranged, or Both. This is used for deserialization.
-   */
-  Type type;
-
-  /**
    * Speical notes about this weapon. For example, "this weapon does 3x damage when used in mounted
    * combat"
    */
   List<String> notes;
+
+  /**
+   * Determines if this weapon is ONE_HANDED or TWO_HANDED
+   */
+  Wield wield;
+  /**
+   * The itemType of weapon. Values are: Melee, Ranged, or Both. This is used for deserialization.
+   */
+  Type weaponType;
+
+  /**
+   * Constructor.
+   *
+   * @param name to be set
+   */
+  public Weapon(final String name) {
+    this.name = name;
+    itemType = Item.Type.WEAPON;
+    notes = new ArrayList<>();
+  }
+
+  /**
+   * Returns the weapon itemType. Values are: Melee, Ranged, or Both (ranged and melee)
+   * @return the weapon itemType
+   */
+  public Type getWeaponType() {
+    return weaponType;
+  }
 
   /**
    * For deserialization, a zero-arg constructor.
@@ -35,29 +53,23 @@ public abstract class Weapon extends Item {
   }
 
   /**
-   * Constructor.
+   * Sets the weapon itemType from the enum constant.
    *
-   * @param name to be set
+   * @param weaponType to be set
    */
-  public Weapon(final String name) {
-    super(name);
-    notes = new ArrayList<>();
+  public void setWeaponType(final Type weaponType) {
+    this.weaponType = weaponType;
   }
 
-  /**
-   * Returns the weapon type. Values are: Melee, Ranged, or Both (ranged and melee)
-   * @return the weapon type
-   */
-  public Type getType() {
-    return type;
-  }
+  public abstract String getDamage();
 
   /**
-   * Sets the weapon type from the enum constant.
-   * @param type to be set
+   * Returns a list of all the the notes on this weapon.
+   *
+   * @return this weapons notes
    */
-  public void setType(final Type type) {
-    this.type = type;
+  public List<String> getNotes() {
+    return new ArrayList<>(notes);
   }
 
   /**
@@ -100,22 +112,13 @@ public abstract class Weapon extends Item {
 
     Weapon weapon = (Weapon) o;
 
-    // weapons are equal if the type and names are the same
-    return type == weapon.getType() && name.equals(weapon.getName());
-  }
-
-  /**
-   * Returns a list of all the the notes on this weapon.
-   *
-   * @return this weapons notes
-   */
-  public List<String> getNotes() {
-    return new ArrayList<>(notes);
+    // weapons are equal if the itemType and names are the same
+    return weaponType == weapon.getWeaponType() && name.equals(weapon.getName());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type);
+    return Objects.hash(name, weaponType);
   }
 
   /**

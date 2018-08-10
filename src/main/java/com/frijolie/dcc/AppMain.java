@@ -5,6 +5,7 @@ import com.frijolie.dcc.controller.MenuController;
 import com.frijolie.dcc.controller.ToolbarController;
 import com.frijolie.dcc.model.DCCCharacter;
 import java.io.IOException;
+import java.net.URL;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,30 +17,36 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
 public class AppMain extends Application {
 
   DCCCharacter character;
-
-  @Override
-  public void init() {
-  }
+  BorderPane borderPane;
+  MenuBar menubar;
+  ToolBar toolBar;
 
   @Override
   public void start(Stage primaryStage) {
     // TODO need to execute a number of read tasks which populate factories
     // TODO onSuccess() of the read and loads, then create the model class and start the GUI
     character = new DCCCharacter();
-    primaryStage.getIcons().add(new Image("/images/d20.png"));
+    URL appIconURL = getClass().getResource("/images/d20.png");
+    Image appIcon = new Image(appIconURL.toString());
+    primaryStage.getIcons().add(appIcon);
     primaryStage.setTitle("Character Sheet Generator");
     primaryStage.setResizable(false);
     primaryStage.centerOnScreen();
     primaryStage.setScene(createScene());
+    String toolbarStylesheet = getClass().getResource("/css/Toolbar.css").toString();
+    toolBar.getStylesheets().add(toolbarStylesheet);
+    String mainStylesheet = getClass().getResource("/css/CharacterSheet.css").toString();
+    borderPane.getStylesheets().add(mainStylesheet);
     primaryStage.toFront();
     primaryStage.show();
   }
 
   private Scene createScene() {
-    BorderPane borderPane = new BorderPane();
+    borderPane = new BorderPane();
     borderPane.setTop(createMenus());
     borderPane.setCenter(createMainContent());
     Scene scene = new Scene(borderPane);
@@ -61,8 +68,8 @@ public class AppMain extends Application {
 
   private VBox createMenus() {
     VBox vbox = new VBox();
-    MenuBar menubar = createMenuBar();
-    ToolBar toolBar = createToolBar();
+    menubar = createMenuBar();
+    toolBar = createToolBar();
     vbox.getChildren().addAll(menubar, toolBar);
     return vbox;
   }

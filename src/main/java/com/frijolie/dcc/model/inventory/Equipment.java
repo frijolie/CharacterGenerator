@@ -32,6 +32,7 @@ public class Equipment extends Item {
    * For deserialization, a zero-arg constructor.
    */
   private Equipment() {
+    itemType = Type.EQUIPMENT;
   }
 
   /**
@@ -41,9 +42,10 @@ public class Equipment extends Item {
    * @param costInCopper the cost to be set
    */
   public Equipment(String name, double costInCopper) {
-    super(name);
+    this.name = name;
     notes = FXCollections.observableArrayList();
     this.costInCopper = costInCopper;
+    itemType = Type.EQUIPMENT;
   }
 
   /**

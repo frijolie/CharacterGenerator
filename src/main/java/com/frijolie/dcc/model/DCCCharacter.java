@@ -4,14 +4,16 @@ import com.frijolie.dcc.model.characterclass.CharacterClass;
 import com.frijolie.dcc.model.characterclass.CharacterClassFactory;
 import com.frijolie.dcc.model.characterclass.CharacterClassType;
 import com.frijolie.dcc.model.inventory.Armor;
-import com.frijolie.dcc.model.inventory.Armor.ArmorType;
 import com.frijolie.dcc.model.inventory.ArmorFactory;
 import com.frijolie.dcc.model.inventory.DCCCurrency;
 import com.frijolie.dcc.model.inventory.DCCCurrency.Type;
 import com.frijolie.dcc.model.inventory.Item;
+import com.frijolie.dcc.model.inventory.LanguageFactory;
+import com.frijolie.dcc.model.inventory.LanguageFactory.Language;
 import com.frijolie.dcc.model.inventory.Occupation;
 import com.frijolie.dcc.model.inventory.OccupationFactory;
 import com.frijolie.dcc.model.inventory.Weapon;
+import com.frijolie.dcc.model.inventory.Weapon.Wield;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +24,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableSet;
 
 public class DCCCharacter {
 
@@ -34,6 +37,7 @@ public class DCCCharacter {
   private ObservableList<Weapon> weaponList;
   private ObservableList<DCCCurrency> treasureList;
   private ObservableList<String> alignment;
+  private ObservableSet<String> languages;
   private CombatBonus meleeAttack, meleeDamage, missileAttack, missileDamage;
   private HitPoints hitPoints;
   private IntegerProperty initiative;
@@ -53,6 +57,7 @@ public class DCCCharacter {
     weaponList = FXCollections.observableArrayList();
     treasureList = FXCollections.observableArrayList();
     alignment = FXCollections.observableArrayList("Choose...", "Lawful", "Neutral", "Chaotic");
+    languages = FXCollections.observableSet();
     strength = new AbilityScore();
     agility = new AbilityScore();
     stamina = new AbilityScore();
@@ -118,6 +123,8 @@ public class DCCCharacter {
     calculateLuckyRollBonuses();
     calculateStartingEquipment(); // has to be after calculateOccupation
     calculateStartingWealth();
+    calculateStartingLanguages();
+    addEquipmentNotes();
   }
 
   /**
@@ -128,10 +135,11 @@ public class DCCCharacter {
     copper.setAmount(0);
     silver.setAmount(0);
     gold.setAmount(0);
-    equippedArmor.getArmorList().removeIf(armor -> armor.getArmorType() == ArmorType.SHIELD);
+    equippedArmor.getArmorList().removeIf(armor -> armor.getItemType() == Item.Type.SHIELD);
     equipmentList.clear();
     treasureList.clear();
     weaponList.clear();
+    languages.clear();
     initialize();
   }
 
@@ -332,6 +340,31 @@ public class DCCCharacter {
 
     equipmentList.add(getOccupation().getTradeGood());
     weaponList.add(getOccupation().getStartingWeapon());
+    addWeaponNotes();
+  }
+
+  private void addWeaponNotes() {
+    Weapon weapon = getOccupation().getStartingWeapon();
+    String className = getCharacterClass().getClassName();
+    // if a thief and has a dagger
+    if (className.contains("Thief") && weapon.getName().contains("agger")) {
+      String note = weapon.getNotes().stream()
+          .filter(n -> n.contains("Thieves")).findFirst().orElse("");
+      if (!note.isEmpty()) {
+        noteList.add(note);
+      }
+    }
+    // if two-handed weapon, display two-handed note
+    if (weapon.getWield() == Wield.TWO_HANDED) {
+      String note = getOccupation().getStartingWeapon().getNotes().stream()
+          .filter(n -> n.contains("Two-handed")).findFirst().orElse("");
+      if (!note.isEmpty()) {
+        noteList.add(note);
+      }
+    }
+  }
+
+  private void addEquipmentNotes() {
   }
 
   /**
@@ -409,8 +442,13 @@ public class DCCCharacter {
       case 9:
         Weapon startingWeapon = getOccupation().getStartingWeapon();
         String startingWeaponName = startingWeapon.getName();
-        startingWeapon
-            .setName(String.format("%s (%+d)", startingWeaponName, luckMod.getModifier()));
+        if (luckMod.getModifier() == 0) {
+          startingWeapon.setName(String.format("%s (%s)",
+              startingWeaponName, startingWeapon.getDamage()));
+        } else {
+          startingWeapon.setName(String.format("%s (%s %+d)",
+              startingWeaponName, startingWeapon.getDamage(), luckMod.getModifier()));
+        }
         break;
       case 13:
         // TODO add bonus to spell checks -- need character class first (wizards and clerics)
@@ -551,6 +589,36 @@ public class DCCCharacter {
     equipmentList.add(startingEquipment.calculateStartingEquipment());
   }
 
+  /**
+   * Calculates the known languages for the character. See CRB p.20 & Appendix 'L"
+   */
+  private void calculateStartingLanguages() {
+    // everybody knows 'Common'
+    languages.add("Common");
+    String className = getCharacterClass().getClassName();
+    // if their intelligence >= 8 and they're demi-human, they also know their racial language
+    if (intelligence.getScore() >= 8) {
+      switch (className) {
+        case "Dwarf":
+          languages.add(Language.DWARF.toString());
+          break;
+        case "Elf":
+          languages.add(Language.ELF.toString());
+          break;
+        case "Halfling":
+          languages.add(Language.HALFLING.toString());
+          break;
+      }
+    }
+    // for each +1 of intelligence mod, they know an additional random language
+    int intelMod = intelligenceMod.getModifier();
+    if (intelMod > 0) {
+      for (int i = intelMod; i > 0; i--) {
+        languages.add(LanguageFactory.getZeroLevelLanguage());
+      }
+    }
+  }
+
   public AbilityScore getStrength() {
     return strength;
   }
@@ -681,6 +749,10 @@ public class DCCCharacter {
 
   public CharacterClass getCharacterClass() {
     return characterClass.get();
+  }
+
+  public ObservableSet<String> getLanguages() {
+    return languages;
   }
 
   public ObjectProperty<CharacterClass> characterClassProperty() {

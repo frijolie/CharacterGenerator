@@ -49,7 +49,7 @@ public class WeaponDeserializer implements JsonDeserializer<Weapon> {
   public Weapon deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
       throws JsonParseException {
     JsonObject jsonObject = (JsonObject) json;
-    JsonElement jsonType = jsonObject.get("type");
+    JsonElement jsonType = jsonObject.get("weaponType");
     String type = jsonType.getAsString();
 
     switch (type) {

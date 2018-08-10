@@ -3,7 +3,7 @@ package com.frijolie.dcc.io;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.frijolie.dcc.model.inventory.Item;
+import com.frijolie.dcc.model.inventory.Ammunition;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 class AmmunitionSerializerTest {
 
-  private List<Item> ammoList;
+  private List<Ammunition> ammoList;
   private AmmunitionSerializer ammoSerializer;
 
   @BeforeEach

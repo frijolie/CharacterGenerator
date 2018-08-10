@@ -1,93 +1,102 @@
 [
   {
     "meleeDamage": "1d10",
-    "wield": "TWO_HANDED",
-    "type": "MELEE",
     "notes": [
       "*Two-handed weapons use a d16 on initiative checks."
     ],
-    "name": "Battleaxe",
+    "wield": "TWO_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
+    "name": "Battleaxe*",
     "costInCopper": 700.0
   },
   {
     "meleeDamage": "1d3/2d6***",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [
-      "† Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
+      "† Thieves, when backstabbing, use the 2nd damage value.",
       "***Damage dealt is always subdual damage."
     ],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Blackjack†",
     "costInCopper": 300.0
   },
   {
     "range": "20/40/60",
     "rangedDamage": "1d3/1d5",
-    "wield": "ONE_HANDED",
-    "type": "RANGED",
     "notes": [],
+    "wield": "ONE_HANDED",
+    "weaponType": "RANGED",
+    "itemType": "WEAPON",
     "name": "Blowgun†",
     "costInCopper": 600.0
   },
   {
     "meleeDamage": "1d4",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Club",
     "costInCopper": 300.0
   },
   {
     "range": "80/160/240",
     "rangedDamage": "1d6",
-    "wield": "TWO_HANDED",
-    "type": "RANGED",
     "notes": [
       "*Two-handed weapons use a d16 on initiative checks."
     ],
-    "name": "Crossbow",
+    "wield": "TWO_HANDED",
+    "weaponType": "RANGED",
+    "itemType": "WEAPON",
+    "name": "Crossbow*",
     "costInCopper": 3000.0
   },
   {
     "meleeDamage": "1d4",
     "rangedDamage": "1d10",
     "range": "10/20/30**",
-    "wield": "ONE_HANDED",
-    "type": "BOTH",
     "notes": [
-      "† Thieves, when backstabbing, use the 2nd damage value, all others use the 1st.",
-      "‡Chaotic chars use ceremonial daggers known as Athame, Kris, or Tumi.",
+      "† Thieves, when backstabbing, use the 2nd damage value.",
+      "‡Chaotics use daggers known as Athame, Kris, or Tumi.",
       "**Strength mod applies to damage at close range only."
     ],
+    "wield": "ONE_HANDED",
+    "weaponType": "BOTH",
+    "itemType": "WEAPON",
     "name": "Dagger†‡",
     "costInCopper": 300.0
   },
   {
     "range": "20/40/60**",
     "rangedDamage": "1d4",
-    "wield": "ONE_HANDED",
-    "type": "RANGED",
     "notes": [
       "**Strength mod applies to damage at close range only."
     ],
+    "wield": "ONE_HANDED",
+    "weaponType": "RANGED",
+    "itemType": "WEAPON",
     "name": "Dart",
     "costInCopper": 50.0
   },
   {
     "meleeDamage": "1d6",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Flail",
     "costInCopper": 600.0
   },
   {
     "meleeDamage": "1/3d4",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [
-      "† Thieves, when backstabbing, use the 2nd damage value, all others use the 1st."
+      "† Thieves, when backstabbing, use the 2nd damage value."
     ],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Garrote†",
     "costInCopper": 200.0
   },
@@ -95,11 +104,12 @@
     "meleeDamage": "1d6",
     "rangedDamage": "1d6",
     "range": "10/20/30**",
-    "wield": "ONE_HANDED",
-    "type": "BOTH",
     "notes": [
       "**Strength mod applies to damage at close range only."
     ],
+    "wield": "ONE_HANDED",
+    "weaponType": "BOTH",
+    "itemType": "WEAPON",
     "name": "Handaxe",
     "costInCopper": 400.0
   },
@@ -107,124 +117,137 @@
     "meleeDamage": "1d6",
     "rangedDamage": "1d6",
     "range": "30/60/90**",
-    "wield": "ONE_HANDED",
-    "type": "BOTH",
     "notes": [
       "**Strength mod applies to damage at close range only."
     ],
+    "wield": "ONE_HANDED",
+    "weaponType": "BOTH",
+    "itemType": "WEAPON",
     "name": "Javelin",
     "costInCopper": 100.0
   },
   {
     "meleeDamage": "1d12",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [
       "#These weapons inflict 2x damage on a mounted charge."
     ],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Lance#",
     "costInCopper": 2500.0
   },
   {
     "range": "70/140/210",
     "rangedDamage": "1d6",
-    "wield": "TWO_HANDED",
-    "type": "RANGED",
     "notes": [
       "*Two-handed weapons use a d16 on initiative checks."
     ],
-    "name": "Longbow",
+    "wield": "TWO_HANDED",
+    "weaponType": "RANGED",
+    "itemType": "WEAPON",
+    "name": "Longbow*",
     "costInCopper": 4000.0
   },
   {
     "meleeDamage": "1d8",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Longsword",
     "costInCopper": 1000.0
   },
   {
     "meleeDamage": "1d6",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Mace",
     "costInCopper": 500.0
   },
   {
     "meleeDamage": "1d10",
-    "wield": "TWO_HANDED",
-    "type": "MELEE",
     "notes": [
       "*Two-handed weapons use a d16 on initiative checks."
     ],
-    "name": "Polearm",
+    "wield": "TWO_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
+    "name": "Polearm*",
     "costInCopper": 700.0
   },
   {
     "range": "50/100/150",
     "rangedDamage": "1d6",
-    "wield": "TWO_HANDED",
-    "type": "RANGED",
     "notes": [
       "*Two-handed weapons use a d16 on initiative checks."
     ],
-    "name": "Shortbow",
+    "wield": "TWO_HANDED",
+    "weaponType": "RANGED",
+    "itemType": "WEAPON",
+    "name": "Shortbow*",
     "costInCopper": 2500.0
   },
   {
     "meleeDamage": "1d6",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Short sword",
     "costInCopper": 700.0
   },
   {
     "range": "40/80/160**",
     "rangedDamage": "1d4",
-    "wield": "ONE_HANDED",
-    "type": "RANGED",
     "notes": [
       "**Strength mod applies to damage at close range only."
     ],
+    "wield": "ONE_HANDED",
+    "weaponType": "RANGED",
+    "itemType": "WEAPON",
     "name": "Sling",
     "costInCopper": 200.0
   },
   {
     "meleeDamage": "1d8",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [
       "#These weapons inflict 2x damage on a mounted charge."
     ],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Spear#",
     "costInCopper": 300.0
   },
   {
     "meleeDamage": "1d4",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Staff",
     "costInCopper": 50.0
   },
   {
     "meleeDamage": "1d10",
-    "wield": "TWO_HANDED",
-    "type": "MELEE",
     "notes": [
       "*Two-handed weapons use a d16 on initiative checks."
     ],
-    "name": "Two-handed Sword",
+    "wield": "TWO_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
+    "name": "Two-handed sword*",
     "costInCopper": 1500.0
   },
   {
     "meleeDamage": "1d8",
-    "wield": "ONE_HANDED",
-    "type": "MELEE",
     "notes": [],
+    "wield": "ONE_HANDED",
+    "weaponType": "MELEE",
+    "itemType": "WEAPON",
     "name": "Warhammer",
     "costInCopper": 500.0
   }

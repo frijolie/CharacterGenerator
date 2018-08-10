@@ -1,5 +1,5 @@
 #characterSheet {
-  -fx-background-image: url(/images/sheet.jpg);
+  -fx-background-image: url("../images/sheet.jpg");
   -fx-min-width: 1118px;
   -fx-min-height: 861px;
 }
@@ -240,12 +240,13 @@
 }
 
 #charLanguages {
-  -fx-min-height: 43px;
-  -fx-pref-height: 43px;
-  -fx-max-height: 43px;
-  -fx-min-width: 179px;
-  -fx-pref-width: 179px;
-  -fx-max-width: 179px;
+  -fx-alignment: center-left;
+  -fx-min-height: 33px;
+  -fx-pref-height: 33px;
+  -fx-max-height: 33px;
+  -fx-min-width: 269px;
+  -fx-pref-width: 269px;
+  -fx-max-width: 269px;
 }
 
 #charWeapons {

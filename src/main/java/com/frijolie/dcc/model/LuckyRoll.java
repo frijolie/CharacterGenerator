@@ -54,7 +54,7 @@ public class LuckyRoll {
     luckyRollTable.put(6, "Lucky Sign: Born on the battlefield: Damage rolls");
     luckyRollTable.put(7, "Lucky Sign: Path of the bear: Melee damage rolls");
     luckyRollTable.put(8, "Lucky Sign: Hawkeye: Missile fire damage rolls");
-    luckyRollTable.put(9, "Lucky Sign: Pack hunter: ATK and DAM rolls for 0-lvl starting weapon");
+    luckyRollTable.put(9, "Lucky Sign: Pack hunter: ATK and DAM rolls for 0-lvl weapon");
     luckyRollTable.put(10, "Lucky Sign: Born under the loom: Skill checks (including thief)");
     luckyRollTable.put(11, "Lucky Sign: Fox’s cunning: Find and disable traps");
     luckyRollTable.put(12, "Lucky Sign: Four-leafed clover: Find secret doors");
@@ -99,7 +99,7 @@ public class LuckyRoll {
    * Returns the result, as an int, of the random roll of the dice.
    * @return the result of the random roll of dice
    */
-  int getRollResult() {
+  public int getRollResult() {
     return rollResult.get();
   }
 

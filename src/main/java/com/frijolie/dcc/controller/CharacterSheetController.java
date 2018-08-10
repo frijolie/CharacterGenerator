@@ -10,6 +10,7 @@ import com.frijolie.dcc.view.PositivePrefixTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.InvalidationListener;
+import javafx.collections.SetChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -30,7 +31,7 @@ public class CharacterSheetController implements Initializable {
   private TextField charName, charTitle, occupation, charClass, speed, level, xp, armorClass;
 
   @FXML
-  private TextField hitPoints, actionDie, critDie, critTable, luckyRoll, maxHP;
+  private TextField hitPoints, actionDie, critDie, critTable, luckyRoll, maxHP, charLanguages;
 
   @FXML
   private PositivePrefixTextField initiative, strengthMod, agilityMod, staminaMod, personalityMod;
@@ -107,6 +108,7 @@ public class CharacterSheetController implements Initializable {
     critDie.textProperty().bind(character.getCharacterClass().critDieProperty());
     critTable.textProperty().bind(character.getCharacterClass().critTableProperty());
     actionDie.textProperty().bind(character.getCharacterClass().actionDiceProperty());
+    initiative.textProperty().bind(character.initiativeProperty().asString());
     attack.textProperty().bind(character.getCharacterClass().attackBonusProperty().asString());
     xp.textProperty().bind(character.getCharacterClass().experiencePointsProperty().asString());
     level.textProperty().bind(character.getCharacterClass().characterLevelProperty().asString());
@@ -162,7 +164,11 @@ public class CharacterSheetController implements Initializable {
           setText(null);
         } else {
           setText("");
-          setText(weapon.getName());
+          if (character.getLuckyRoll().getRollResult() == 9) {
+            setText(String.format("%s", weapon.getName()));
+          } else {
+            setText(String.format("%s (%s)", weapon.getName(), weapon.getDamage()));
+          }
         }
       }
     });
@@ -182,5 +188,11 @@ public class CharacterSheetController implements Initializable {
     speed.setText(String.format("%d'", character.getCharacterClass().getCharacterSpeed()));
     charAlignment.setItems(character.getAlignment());
     charAlignment.getSelectionModel().selectFirst();
+    charLanguages.setText(String.join(", ", character.getLanguages()));
+    character.getLanguages().addListener((SetChangeListener.Change<? extends String> change) -> {
+      charLanguages.setText("");
+      String languages = String.join(", ", character.getLanguages());
+      charLanguages.setText(languages);
+    });
   }
 }

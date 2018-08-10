@@ -2,7 +2,6 @@ package com.frijolie.dcc.io;
 
 import com.frijolie.dcc.model.inventory.Ammunition;
 import com.frijolie.dcc.model.inventory.DCCCurrency;
-import com.frijolie.dcc.model.inventory.Item;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,9 +9,9 @@ import java.util.List;
 public class AmmunitionSerializer {
 
   private DCCCurrency gold, copper;
-  private List<Item> ammoList;
+  private List<Ammunition> ammoList;
 
-  public AmmunitionSerializer() {
+  AmmunitionSerializer() {
     gold = new DCCCurrency(DCCCurrency.Type.GOLD);
     copper = new DCCCurrency(DCCCurrency.Type.COPPER);
     ammoList = new ArrayList<>();
@@ -20,16 +19,16 @@ public class AmmunitionSerializer {
   }
 
   private void populateAmmo() {
-    Item arrows = new Ammunition("Arrows", 20);
+    Ammunition arrows = new Ammunition("Arrows", 20);
     arrows.setCostInCopper(DCCCurrency.convert(5, gold, copper));
 
-    Item silverTip = new Ammunition("Arrow, silver-tipped", 1);
+    Ammunition silverTip = new Ammunition("Arrow, silver-tipped", 1);
     silverTip.setCostInCopper(DCCCurrency.convert(5, gold, copper));
 
-    Item quarrels = new Ammunition("Quarrels", 30);
+    Ammunition quarrels = new Ammunition("Quarrels", 30);
     quarrels.setCostInCopper(DCCCurrency.convert(10, gold, copper));
 
-    Item slingStones = new Ammunition("Sling stones", 30);
+    Ammunition slingStones = new Ammunition("Sling stones", 30);
     slingStones.setCostInCopper(DCCCurrency.convert(1, gold, copper));
 
     ammoList.add(arrows);
@@ -38,7 +37,7 @@ public class AmmunitionSerializer {
     ammoList.add(slingStones);
   }
 
-  public final List<Item> getAmmoList() {
+  final List<Ammunition> getAmmoList() {
     return Collections.unmodifiableList(ammoList);
   }
 

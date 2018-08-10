@@ -43,4 +43,8 @@ public class MeleeRangedWeapon extends Weapon implements Ranged, Melee {
     rangedDamage = damage;
   }
 
+  @Override
+  public String getDamage() {
+    return meleeDamage + "/" + rangedDamage;
+  }
 }

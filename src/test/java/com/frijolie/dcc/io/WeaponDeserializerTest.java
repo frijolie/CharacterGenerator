@@ -55,14 +55,14 @@ class WeaponDeserializerTest {
   @Test
   void weaponListShouldContainA_Battleaxe() {
     MeleeWeapon battleaxe = (MeleeWeapon) weaponList.stream()
-        .filter(w -> w.getName().equals("Battleaxe")).findFirst().orElse(null);
+        .filter(w -> w.getName().contains("Battleaxe")).findFirst().orElse(null);
     assertAll("weaponList should contain a battleaxe with all the proper stats",
         () -> assertNotNull(battleaxe, "battleaxe should not be null"),
-        () -> assertEquals(Type.MELEE, battleaxe.getType(),
-            "A battleaxe should be of type MELEE, instead it is: " + battleaxe.getType()),
+        () -> assertEquals(Type.MELEE, battleaxe.getWeaponType(),
+            "A battleaxe should be of itemType MELEE, instead it is: " + battleaxe.getWeaponType()),
         () -> assertEquals(Wield.TWO_HANDED, battleaxe.getWield(),
             "A battleaxe should be two-handed, instead it is: " + battleaxe.getWield()),
-        () -> assertTrue(battleaxe.getName().equals("Battleaxe"),
+        () -> assertTrue(battleaxe.getName().contains("Battleaxe"),
             "a battleaxe should have the name of 'Battleaxe', instead it is: "
                 + battleaxe.getName()),
         () -> assertEquals("1d10", battleaxe.getMeleeDamage(),
@@ -82,8 +82,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().contains("Blackjack")).findFirst().orElse(null);
     assertAll("weaponList should contain a blackjack with all the proper stats",
         () -> assertNotNull(blackjack, "blackjack should not be null"),
-        () -> assertEquals(Type.MELEE, blackjack.getType(),
-            "A blackjack should be of type MELEE. Instead it is " + blackjack.getType()),
+        () -> assertEquals(Type.MELEE, blackjack.getWeaponType(),
+            "A blackjack should be of itemType MELEE. Instead it is " + blackjack.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, blackjack.getWield(),
             "A blackjack should be one-handed, instead it is: " + blackjack.getWield()),
         () -> assertTrue(blackjack.getName().contains("Blackjack"),
@@ -113,8 +113,9 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().contains("Blowgun")).findFirst().orElse(null);
     assertAll("weaponList should contain a blowgun with all the proper stats",
         () -> assertNotNull(blowgun, "blowgun should not be null"),
-        () -> assertEquals(Type.RANGED, blowgun.getType(),
-            "A blowgun should be of type RANGED, instead it is: " + blowgun.getType()),
+        () -> assertEquals(Type.RANGED, blowgun.getWeaponType(),
+            "A blowgun should be of itemType RANGED, instead it is: "
+                + blowgun.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, blowgun.getWield(),
             "A blowgun should be one-handed, instead it is: " + blowgun.getWield()),
         () -> assertTrue(blowgun.getName().contains("Blowgun"),
@@ -140,8 +141,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Club")).findFirst().orElse(null);
     assertAll("weaponList should contain a club with all the proper stats",
         () -> assertNotNull(club, "club should not be null"),
-        () -> assertEquals(Type.MELEE, club.getType(),
-            "A club should be of type MELEE, instead it is " + club.getType()),
+        () -> assertEquals(Type.MELEE, club.getWeaponType(),
+            "A club should be of itemType MELEE, instead it is " + club.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, club.getWield(),
             "A club should be one-handed, instead it is: " + club.getWield()),
         () -> assertTrue(club.getName().equals("Club"),
@@ -161,14 +162,14 @@ class WeaponDeserializerTest {
   @Test
   void weaponListShouldContainA_Crossbow() {
     RangedWeapon crossbow = (RangedWeapon) weaponList.stream()
-        .filter(w -> w.getName().equals("Crossbow")).findFirst().orElse(null);
+        .filter(w -> w.getName().contains("Crossbow")).findFirst().orElse(null);
     assertAll("weaponList should contain a crossbow with all the proper stats",
         () -> assertNotNull(crossbow, "crossbow should not be null"),
-        () -> assertEquals(Type.RANGED, crossbow.getType(),
-            "A crossbow should be of type RANGED, instead it is: " + crossbow.getType()),
+        () -> assertEquals(Type.RANGED, crossbow.getWeaponType(),
+            "A crossbow should be of itemType RANGED, instead it is: " + crossbow.getWeaponType()),
         () -> assertEquals(Wield.TWO_HANDED, crossbow.getWield(),
             "A crossbow should be two-handed, instead it is: " + crossbow.getWield()),
-        () -> assertTrue(crossbow.getName().equals("Crossbow"),
+        () -> assertTrue(crossbow.getName().contains("Crossbow"),
             "a crossbow should have the name of 'Crossbow', instead it is: "
                 + crossbow.getName()),
         () -> assertEquals("1d6", crossbow.getRangedDamage(),
@@ -191,8 +192,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().contains("Dagger")).findFirst().orElse(null);
     assertAll("weaponList should contain a dagger with all the proper stats",
         () -> assertNotNull(dagger, "dagger should not be null"),
-        () -> assertEquals(Type.BOTH, dagger.getType(),
-            "A dagger should be of type BOTH, instead it is: " + dagger.getType()),
+        () -> assertEquals(Type.BOTH, dagger.getWeaponType(),
+            "A dagger should be of itemType BOTH, instead it is: " + dagger.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, dagger.getWield(),
             "A dagger should be one-handed, instead it is: " + dagger.getWield()),
         () -> assertTrue(dagger.getName().contains("Dagger"),
@@ -221,8 +222,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Dart")).findFirst().orElse(null);
     assertAll("weaponList should contain a dart with all the proper stats",
         () -> assertNotNull(dart, "dart should not be null"),
-        () -> assertEquals(Type.RANGED, dart.getType(),
-            "A dart should be of type RANGED, instead it is: " + dart.getType()),
+        () -> assertEquals(Type.RANGED, dart.getWeaponType(),
+            "A dart should be of itemType RANGED, instead it is: " + dart.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, dart.getWield(),
             "A dart should be one-handed, instead it is: " + dart.getWield()),
         () -> assertTrue(dart.getName().equals("Dart"),
@@ -244,8 +245,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Flail")).findFirst().orElse(null);
     assertAll("weaponList should contain a flail with all the proper stats",
         () -> assertNotNull(flail, "flail should not be null"),
-        () -> assertEquals(Type.MELEE, flail.getType(),
-            "A flail should be of type MELEE, instead it is " + flail.getType()),
+        () -> assertEquals(Type.MELEE, flail.getWeaponType(),
+            "A flail should be of itemType MELEE, instead it is " + flail.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, flail.getWield(),
             "A flail should be one-handed, instead it is: " + flail.getWield()),
         () -> assertTrue(flail.getName().equals("Flail"),
@@ -269,8 +270,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().contains("Garrote")).findFirst().orElse(null);
     assertAll("weaponList should contain a garrote with all the proper stats",
         () -> assertNotNull(garrote, "garrote should not be null"),
-        () -> assertEquals(Type.MELEE, garrote.getType(),
-            "A garrote should be of type MELEE, instead it is " + garrote.getType()),
+        () -> assertEquals(Type.MELEE, garrote.getWeaponType(),
+            "A garrote should be of itemType MELEE, instead it is " + garrote.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, garrote.getWield(),
             "A garrote should be one-handed, instead it is: " + garrote.getWield()),
         () -> assertTrue(garrote.getName().contains("Garrote"),
@@ -295,8 +296,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Handaxe")).findFirst().orElse(null);
     assertAll("weaponList should contain a handaxe with all the proper stats",
         () -> assertNotNull(handaxe, "handaxe should not be null"),
-        () -> assertEquals(Type.BOTH, handaxe.getType(),
-            "A handaxe should be of type BOTH, instead it is " + handaxe.getType()),
+        () -> assertEquals(Type.BOTH, handaxe.getWeaponType(),
+            "A handaxe should be of itemType BOTH, instead it is " + handaxe.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, handaxe.getWield(),
             "A handaxe should be one-handed, instead it is: " + handaxe.getWield()),
         () -> assertTrue(handaxe.getName().equals("Handaxe"),
@@ -327,8 +328,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Javelin")).findFirst().orElse(null);
     assertAll("weaponList should contain a javelin with all the proper stats",
         () -> assertNotNull(javelin, "javelin should not be null"),
-        () -> assertEquals(Type.BOTH, javelin.getType(),
-            "A javelin should be of type BOTH, instead it is " + javelin.getType()),
+        () -> assertEquals(Type.BOTH, javelin.getWeaponType(),
+            "A javelin should be of itemType BOTH, instead it is " + javelin.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, javelin.getWield(),
             "A javelin should be one-handed, instead it is: " + javelin.getWield()),
         () -> assertTrue(javelin.getName().equals("Javelin"),
@@ -354,14 +355,14 @@ class WeaponDeserializerTest {
   @Test
   void weaponListShouldContainA_Longbow() {
     RangedWeapon longbow = (RangedWeapon) weaponList.stream()
-        .filter(w -> w.getName().equals("Longbow")).findFirst().orElse(null);
+        .filter(w -> w.getName().contains("Longbow")).findFirst().orElse(null);
     assertAll("weaponList should contain a longbow with all the proper stats",
         () -> assertNotNull(longbow, "longbow should not be null"),
-        () -> assertEquals(Type.RANGED, longbow.getType(),
-            "A longbow should be of type RANGED, instead it is " + longbow.getType()),
+        () -> assertEquals(Type.RANGED, longbow.getWeaponType(),
+            "A longbow should be of itemType RANGED, instead it is " + longbow.getWeaponType()),
         () -> assertEquals(Wield.TWO_HANDED, longbow.getWield(),
             "A longbow should be two-handed, instead it is: " + longbow.getWield()),
-        () -> assertTrue(longbow.getName().equals("Longbow"),
+        () -> assertTrue(longbow.getName().contains("Longbow"),
             "a longbow should have the name of 'Longbow', instead it is: "
                 + longbow.getName()),
         () -> assertEquals("1d6", longbow.getRangedDamage(),
@@ -378,8 +379,6 @@ class WeaponDeserializerTest {
             "A longbow costInCopper should be 4000. Instead it is: "
                 + longbow.getCostInCopper())
     );
-    assertTrue(weaponList.stream().map(Weapon::getName).anyMatch(x -> x.equals("Longbow")),
-        "weaponList should include a Longbow");
   }
 
   @Test
@@ -388,8 +387,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().contains("Lance")).findFirst().orElse(null);
     assertAll("weaponList should contain a lance with all the proper stats",
         () -> assertNotNull(lance, "Lance should not be null"),
-        () -> assertEquals(Type.MELEE, lance.getType(),
-            "A lance should be of type MELEE, instead it is " + lance.getType()),
+        () -> assertEquals(Type.MELEE, lance.getWeaponType(),
+            "A lance should be of itemType MELEE, instead it is " + lance.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, lance.getWield(),
             "A lance should be one-handed, instead it is: " + lance.getWield()),
         () -> assertTrue(lance.getName().contains("Lance"),
@@ -414,8 +413,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Longsword")).findFirst().orElse(null);
     assertAll("weaponList should contain a longsword with all the proper stats",
         () -> assertNotNull(longsword, "longsword should not be null"),
-        () -> assertEquals(Type.MELEE, longsword.getType(),
-            "A longsword should be of type MELEE, instead it is " + longsword.getType()),
+        () -> assertEquals(Type.MELEE, longsword.getWeaponType(),
+            "A longsword should be of itemType MELEE, instead it is " + longsword.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, longsword.getWield(),
             "A longsword should be one-handed, instead it is: " + longsword.getWield()),
         () -> assertTrue(longsword.getName().equals("Longsword"),
@@ -439,8 +438,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Mace")).findFirst().orElse(null);
     assertAll("weaponList should contain a mace with all the proper stats",
         () -> assertNotNull(mace, "mace should not be null"),
-        () -> assertEquals(Type.MELEE, mace.getType(),
-            "A mace should be of type MELEE, instead it is " + mace.getType()),
+        () -> assertEquals(Type.MELEE, mace.getWeaponType(),
+            "A mace should be of itemType MELEE, instead it is " + mace.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, mace.getWield(),
             "A mace should be one-handed, instead it is: " + mace.getWield()),
         () -> assertTrue(mace.getName().equals("Mace"),
@@ -460,14 +459,14 @@ class WeaponDeserializerTest {
   @Test
   void weaponListShouldContainA_Polearm() {
     MeleeWeapon polearm = (MeleeWeapon) weaponList.stream()
-        .filter(w -> w.getName().equals("Polearm")).findFirst().orElse(null);
+        .filter(w -> w.getName().contains("Polearm")).findFirst().orElse(null);
     assertAll("weaponList should contain a polearm with all the proper stats",
         () -> assertNotNull(polearm, "polearm should not be null"),
-        () -> assertEquals(Type.MELEE, polearm.getType(),
-            "A polearm should be of type MELEE, instead it is " + polearm.getType()),
+        () -> assertEquals(Type.MELEE, polearm.getWeaponType(),
+            "A polearm should be of itemType MELEE, instead it is " + polearm.getWeaponType()),
         () -> assertEquals(Wield.TWO_HANDED, polearm.getWield(),
             "A polearm should be two-handed, instead it is: " + polearm.getWield()),
-        () -> assertTrue(polearm.getName().equals("Polearm"),
+        () -> assertTrue(polearm.getName().contains("Polearm"),
             "a polearm should have the name of 'Polearm', instead it is: "
                 + polearm.getName()),
         () -> assertEquals("1d10", polearm.getMeleeDamage(),
@@ -486,14 +485,14 @@ class WeaponDeserializerTest {
   @Test
   void weaponListShouldContainA_Shortbow() {
     RangedWeapon shortbow = (RangedWeapon) weaponList.stream()
-        .filter(w -> w.getName().equals("Shortbow")).findFirst().orElse(null);
+        .filter(w -> w.getName().contains("Shortbow")).findFirst().orElse(null);
     assertAll("weaponList should contain a shortbow with all the proper stats",
         () -> assertNotNull(shortbow, "shortbow should not be null"),
-        () -> assertEquals(Type.RANGED, shortbow.getType(),
-            "A shortbow should be of type RANGED, instead it is " + shortbow.getType()),
+        () -> assertEquals(Type.RANGED, shortbow.getWeaponType(),
+            "A shortbow should be of itemType RANGED, instead it is " + shortbow.getWeaponType()),
         () -> assertEquals(Wield.TWO_HANDED, shortbow.getWield(),
             "A shortbow should be two-handed, instead it is: " + shortbow.getWield()),
-        () -> assertTrue(shortbow.getName().equals("Shortbow"),
+        () -> assertTrue(shortbow.getName().contains("Shortbow"),
             "a shortbow should have the name of 'Shortbow', instead it is: "
                 + shortbow.getName()),
         () -> assertEquals("1d6", shortbow.getRangedDamage(),
@@ -519,8 +518,9 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Short sword")).findFirst().orElse(null);
     assertAll("weaponList should contain a short sword with all the proper stats",
         () -> assertNotNull(shortsword, "shortsword should not be null"),
-        () -> assertEquals(Type.MELEE, shortsword.getType(),
-            "A short sword should be of type MELEE, instead it is " + shortsword.getType()),
+        () -> assertEquals(Type.MELEE, shortsword.getWeaponType(),
+            "A short sword should be of itemType MELEE, instead it is " + shortsword
+                .getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, shortsword.getWield(),
             "A short sword should be one-handed, instead it is: " + shortsword.getWield()),
         () -> assertTrue(shortsword.getName().equals("Short sword"),
@@ -544,8 +544,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Sling")).findFirst().orElse(null);
     assertAll("weaponList should contain a sling with all the proper stats",
         () -> assertNotNull(sling, "sling should not be null"),
-        () -> assertEquals(Type.RANGED, sling.getType(),
-            "A sling should be of type RANGED, instead it is " + sling.getType()),
+        () -> assertEquals(Type.RANGED, sling.getWeaponType(),
+            "A sling should be of itemType RANGED, instead it is " + sling.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, sling.getWield(),
             "A sling should be one-handed, instead it is: " + sling.getWield()),
         () -> assertTrue(sling.getName().equals("Sling"),
@@ -574,8 +574,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().contains("Spear")).findFirst().orElse(null);
     assertAll("weaponList should contain a spear with all the proper stats",
         () -> assertNotNull(spear, "spear should not be null"),
-        () -> assertEquals(Type.MELEE, spear.getType(),
-            "A spear should be of type MELEE, instead it is " + spear.getType()),
+        () -> assertEquals(Type.MELEE, spear.getWeaponType(),
+            "A spear should be of itemType MELEE, instead it is " + spear.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, spear.getWield(),
             "A spear should be one-handed, instead it is: " + spear.getWield()),
         () -> assertTrue(spear.getName().contains("Spear"),
@@ -600,8 +600,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Staff")).findFirst().orElse(null);
     assertAll("weaponList should contain a staff with all the proper stats",
         () -> assertNotNull(staff, "staff should not be null"),
-        () -> assertEquals(Type.MELEE, staff.getType(),
-            "A staff should be of type MELEE, instead it is " + staff.getType()),
+        () -> assertEquals(Type.MELEE, staff.getWeaponType(),
+            "A staff should be of itemType MELEE, instead it is " + staff.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, staff.getWield(),
             "A staff should be one-handed, instead it is: " + staff.getWield()),
         () -> assertTrue(staff.getName().equals("Staff"),
@@ -624,9 +624,9 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().contains("Two-handed")).findFirst().orElse(null);
     assertAll("weaponList should contain a two-handed sword with all the proper stats",
         () -> assertNotNull(twoHandedSword, "two-handed sword should not be null"),
-        () -> assertEquals(Type.MELEE, twoHandedSword.getType(),
-            "A twoHandedSword should be of type MELEE, instead it is "
-                + twoHandedSword.getType()),
+        () -> assertEquals(Type.MELEE, twoHandedSword.getWeaponType(),
+            "A twoHandedSword should be of itemType MELEE, instead it is "
+                + twoHandedSword.getWeaponType()),
         () -> assertEquals(Wield.TWO_HANDED, twoHandedSword.getWield(),
             "A two-handed sword should be two-handed, instead it is: "
                 + twoHandedSword.getWield()),
@@ -653,8 +653,8 @@ class WeaponDeserializerTest {
         .filter(w -> w.getName().equals("Warhammer")).findFirst().orElse(null);
     assertAll("weaponList should contain a warhammer with all the proper stats",
         () -> assertNotNull(warhammer, "warhammer should not be null"),
-        () -> assertEquals(Type.MELEE, warhammer.getType(),
-            "A warhammer should be of type MELEE, instead it is " + warhammer.getType()),
+        () -> assertEquals(Type.MELEE, warhammer.getWeaponType(),
+            "A warhammer should be of itemType MELEE, instead it is " + warhammer.getWeaponType()),
         () -> assertEquals(Wield.ONE_HANDED, warhammer.getWield(),
             "A warhammer should be one-handed, instead it is: " + warhammer.getWield()),
         () -> assertTrue(warhammer.getName().equals("Warhammer"),

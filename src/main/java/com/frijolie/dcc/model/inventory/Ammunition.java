@@ -27,6 +27,7 @@ public class Ammunition extends Item {
   public Ammunition(String name, int quantity) {
     super(name);
     this.quantity = quantity;
+    itemType = Type.AMMUNITION;
   }
 
   /**

@@ -4,7 +4,7 @@
     "checkPenalty": 0,
     "speedPenalty": 0,
     "fumbleDie": "d4",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Unarmored",
     "costInCopper": 0.0
   },
@@ -13,7 +13,7 @@
     "checkPenalty": 0,
     "speedPenalty": 0,
     "fumbleDie": "d8",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Padded",
     "costInCopper": 500.0
   },
@@ -22,7 +22,7 @@
     "checkPenalty": -1,
     "speedPenalty": 0,
     "fumbleDie": "d8",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Leather",
     "costInCopper": 2000.0
   },
@@ -31,7 +31,7 @@
     "checkPenalty": -2,
     "speedPenalty": 0,
     "fumbleDie": "d8",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Studded leather",
     "costInCopper": 4500.0
   },
@@ -40,7 +40,7 @@
     "checkPenalty": -3,
     "speedPenalty": 0,
     "fumbleDie": "d12",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Hide",
     "costInCopper": 3000.0
   },
@@ -49,7 +49,7 @@
     "checkPenalty": -4,
     "speedPenalty": -5,
     "fumbleDie": "d12",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Scale mail",
     "costInCopper": 8000.0
   },
@@ -58,7 +58,7 @@
     "checkPenalty": -5,
     "speedPenalty": -5,
     "fumbleDie": "d12",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Chainmail",
     "costInCopper": 15000.0
   },
@@ -67,7 +67,7 @@
     "checkPenalty": -6,
     "speedPenalty": -5,
     "fumbleDie": "d16",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Banded mail",
     "costInCopper": 25000.0
   },
@@ -76,7 +76,7 @@
     "checkPenalty": -7,
     "speedPenalty": -10,
     "fumbleDie": "d16",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Half-plate",
     "costInCopper": 55000.0
   },
@@ -85,7 +85,7 @@
     "checkPenalty": -8,
     "speedPenalty": -10,
     "fumbleDie": "d16",
-    "armorType": "ARMOR",
+    "itemType": "ARMOR",
     "name": "Full plate",
     "costInCopper": 120000.0
   },
@@ -94,7 +94,7 @@
     "checkPenalty": -1,
     "speedPenalty": 0,
     "fumbleDie": "d8",
-    "armorType": "SHIELD",
+    "itemType": "SHIELD",
     "name": "Shield",
     "costInCopper": 1000.0
   }

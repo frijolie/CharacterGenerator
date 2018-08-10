@@ -13,6 +13,18 @@ package com.frijolie.dcc.model.inventory;
  */
 public class Item {
 
+  public Type itemType;
+
+  /**
+   * Constructor. Must pass the name of the item.
+   *
+   * @param name to be set
+   */
+  public Item(final String name) {
+    this.name = name;
+    itemType = Type.ITEM;
+  }
+
   /**
    * The name of the item, represented by a word.
    */
@@ -29,13 +41,8 @@ public class Item {
   public Item() {
   }
 
-  /**
-   * Constructor. Must pass the name of the item.
-   *
-   * @param name to be set
-   */
-  public Item(final String name) {
-    this.name = name;
+  public Type getItemType() {
+    return itemType;
   }
 
   /**
@@ -72,6 +79,10 @@ public class Item {
    */
   public void setCostInCopper(double costInCopper) {
     this.costInCopper = costInCopper;
+  }
+
+  public enum Type {
+    ITEM, WEAPON, ARMOR, EQUIPMENT, AMMUNITION, SHIELD
   }
 
 }

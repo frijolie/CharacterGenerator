@@ -58,19 +58,10 @@ public class Armor extends Item {
   private String fumbleDie;
 
   /**
-   * The type of this armor. Either "ARMOR" or "SHIELD"
-   */
-  private ArmorType armorType;
-
-  /**
-   * An enumeration of all possible types of armor. This is used to equate equality of armor.
-   */
-  public enum ArmorType { ARMOR, SHIELD }
-
-  /**
    * For deserialization, a zero-arg constructor.
    */
   private Armor() {
+    this("", 0.0);
   }
 
   /**
@@ -80,8 +71,13 @@ public class Armor extends Item {
    * @param costInCopper the cost of this armor in copper pieces (CP)
    */
   public Armor(String name, double costInCopper) {
-    super(name);
+    this.name = name;
     this.costInCopper = costInCopper;
+    if (name.equals("Shield")) {
+      itemType = Type.SHIELD;
+    } else {
+      itemType = Type.ARMOR;
+    }
   }
 
   /**
@@ -157,22 +153,6 @@ public class Armor extends Item {
   }
 
   /**
-   * Returns the type of this armor. Will be either "ARMOR" or "SHIELD"
-   * @return the armor type
-   */
-  public ArmorType getArmorType() {
-    return armorType;
-  }
-
-  /**
-   * Sets the armor type. Will be either "ARMOR" or "SHIELD"
-   * @param armorType to be set
-   */
-  public void setArmorType(ArmorType armorType) {
-    this.armorType = armorType;
-  }
-
-  /**
    * A piece of armor is equal if both their names and types are equal
    *
    * @param obj the object in comparison
@@ -184,12 +164,12 @@ public class Armor extends Item {
       return false;
     }
     Armor armor = (Armor) obj;
-    return getName().equals(armor.getName()) && armorType == armor.getArmorType();
+    return getName().equals(armor.getName());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, armorType);
+    return Objects.hash(name);
   }
 
   @Override

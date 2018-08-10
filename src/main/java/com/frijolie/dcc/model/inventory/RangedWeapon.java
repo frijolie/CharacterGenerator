@@ -39,4 +39,8 @@ public class RangedWeapon extends Weapon implements Ranged {
     this.range = range;
   }
 
+  @Override
+  public String getDamage() {
+    return rangedDamage;
+  }
 }

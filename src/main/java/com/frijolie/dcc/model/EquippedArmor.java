@@ -4,8 +4,6 @@ import com.frijolie.dcc.model.inventory.Armor;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-import javafx.beans.property.ReadOnlyIntegerProperty;
-import javafx.beans.property.ReadOnlyIntegerWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -43,7 +41,7 @@ public class EquippedArmor {
    * example, you cannot equip two shields or multiple suits of Studded Leather. You may, however,
    * equip a suit of armor and a shield.</p>
    *
-   * <p>If a different model of similar type is passed, it will replace whatever is in the list. For
+   * <p>If a different model of similar itemType is passed, it will replace whatever is in the list. For
    * example, if a suit of Padded armor is equipped and you pass a suit of Full-plate, the plate
    * will replace the Padded armor (the padded armor will be removed).</p>
    *
@@ -57,7 +55,7 @@ public class EquippedArmor {
     } else if (!armorList.contains(armor)) {
       // remove the old armor (or shield)
       List<Armor> oldArmor = armorList.stream()
-          .filter(a -> a.getArmorType() == armor.getArmorType())
+          .filter(a -> a.getItemType() == armor.getItemType())
           .collect(Collectors.toList());
       armorList.removeAll(oldArmor);
       // add the new one

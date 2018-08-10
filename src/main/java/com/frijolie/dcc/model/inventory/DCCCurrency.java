@@ -6,7 +6,7 @@ import javafx.beans.property.ReadOnlyStringProperty;
 import javafx.beans.property.ReadOnlyStringWrapper;
 
 /**
- * <p>Currency represents a type of currency in the application.</p>
+ * <p>Currency represents a itemType of currency in the application.</p>
  *
  * <p>There are five types of currencies in DCC, listed in lowest denomination to highest: copper,
  * silver, gold, electrum, and platinum. Types of currencies are stored in an enumeration class
@@ -42,9 +42,24 @@ public class DCCCurrency {
    */
   private ReadOnlyStringWrapper description;
   /**
-   * An int value used to convert currency from one type to another.
+   * An int value used to convert currency from one itemType to another.
    */
   private int multiplier;
+
+  /**
+   * Constructor. Must pass a Type as an argument.
+   */
+  public DCCCurrency(Type type) {
+    /**
+     * The itemType of currency. An Enum value. Values are COPPER, SILVER, GOLD, ELECTRUM, and PLATINUM
+     */
+    Type type1 = type;
+    name = new ReadOnlyStringWrapper(type.getName());
+    abbreviation = new ReadOnlyStringWrapper(type.getAbbreviation());
+    multiplier = type.getMultiplicator();
+    amount = new ReadOnlyIntegerWrapper(0);
+    description = new ReadOnlyStringWrapper(getName() + " (" + getAbbreviation() + ")");
+  }
 
   /**
    * An enum of all the types of currency
@@ -78,13 +93,13 @@ public class DCCCurrency {
     PLATINUM("PP", "Platinum", 10000);
 
     /**
-     * An abbreviation used to represent the type of currency. For example copper is abbreviated as
+     * An abbreviation used to represent the itemType of currency. For example copper is abbreviated as
      * "CP" for copper pieces.
      */
     private String abbreviation;
 
     /**
-     * A word to describe the currency type. For example, copper's name is "Copper"
+     * A word to describe the currency itemType. For example, copper's name is "Copper"
      */
     private String name;
 
@@ -98,7 +113,7 @@ public class DCCCurrency {
     /**
      * Constructor
      *
-     * @param abbreviation the abbreviation of the currency type which is two characters
+     * @param abbreviation the abbreviation of the currency itemType which is two characters
      * @param name the representation of the currency in the form of a word
      * @param multiplicator an int value which represents the unit of conversion between currencies
      */
@@ -134,21 +149,6 @@ public class DCCCurrency {
     public int getMultiplicator() {
       return multiplicator;
     }
-  }
-
-  /**
-   * Constructor. Must pass a Type as an argument.
-   */
-  public DCCCurrency(Type type) {
-    /**
-     * The type of currency. An Enum value. Values are COPPER, SILVER, GOLD, ELECTRUM, and PLATINUM
-     */
-    Type type1 = type;
-    name = new ReadOnlyStringWrapper(type.getName());
-    abbreviation = new ReadOnlyStringWrapper(type.getAbbreviation());
-    multiplier = type.getMultiplicator();
-    amount = new ReadOnlyIntegerWrapper(0);
-    description = new ReadOnlyStringWrapper(getName() + " (" + getAbbreviation() + ")");
   }
 
   /**

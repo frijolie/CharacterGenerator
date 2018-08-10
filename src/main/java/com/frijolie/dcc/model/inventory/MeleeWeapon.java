@@ -23,4 +23,8 @@ public class MeleeWeapon extends Weapon implements Melee {
     meleeDamage = damage;
   }
 
+  @Override
+  public String getDamage() {
+    return meleeDamage;
+  }
 }
