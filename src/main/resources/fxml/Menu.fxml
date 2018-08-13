@@ -19,7 +19,7 @@
   </Menu>
   <Menu text="View">
     <items>
-      <CheckMenuItem text="Toolbar"/>
+      <CheckMenuItem text="Toolbar" fx:id="toolBarMenuItem"/>
     </items>
   </Menu>
   <Menu text="Edit">

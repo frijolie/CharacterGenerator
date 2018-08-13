@@ -1,15 +1,20 @@
 package com.frijolie.dcc.controller;
 
+import com.frijolie.dcc.io.DefaultProperties;
 import com.frijolie.dcc.model.DCCCharacter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ToolBar;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 public class ToolbarController implements Initializable {
+
+  @FXML
+  private ToolBar toolbar;
 
   @FXML
   private Button regenerateButton;
@@ -28,9 +33,11 @@ public class ToolbarController implements Initializable {
         regenerateCharacter();
       }
     });
+    toolbar.setManaged(DefaultProperties.getBooleanValue("displayToolbar"));
   }
 
   private void regenerateCharacter() {
     character.refresh();
   }
+
 }
