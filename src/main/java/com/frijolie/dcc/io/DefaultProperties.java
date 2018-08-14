@@ -48,4 +48,12 @@ public class DefaultProperties {
     return false;
   }
 
+  public static String getCustomProperty(String key) {
+    if (defaultProperties.containsKey(key)) {
+      return defaultProperties.getProperty(key);
+    } else {
+      throw new IllegalArgumentException(key + " does not exist as a system property");
+    }
+  }
+
 }

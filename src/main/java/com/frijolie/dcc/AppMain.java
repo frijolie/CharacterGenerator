@@ -69,6 +69,8 @@ public class AppMain extends Application {
   private VBox createMenus() {
     VBox vbox = new VBox();
     menubar = createMenuBar();
+    String menubarStyleSheet = getClass().getResource("/css/Menu.css").toString();
+    menubar.getStylesheets().add(menubarStyleSheet);
     toolBar = createToolBar();
     vbox.getChildren().addAll(menubar, toolBar);
     return vbox;

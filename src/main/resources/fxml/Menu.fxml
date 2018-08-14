@@ -5,16 +5,20 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
-<MenuBar xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
+<MenuBar xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121">
   <Menu text="File">
     <items>
-      <MenuItem text="New"/>
-      <MenuItem text="Open"/>
-      <MenuItem text="Save"/>
-      <MenuItem text="Save As..."/>
-      <MenuItem text="Export"/>
+      <MenuItem text="New" fx:id="newMenuItem"/>
+      <MenuItem text="Open" fx:id="openMenuItem"/>
+      <MenuItem text="Save" fx:id="saveMenuItem"/>
+      <Menu text="Export" fx:id="exportMenu">
+        <items>
+          <MenuItem text="JSON" fx:id="jsonMenuItem"/>
+          <MenuItem text="PDF" fx:id="pdfMenuItem"/>
+        </items>
+      </Menu>
       <SeparatorMenuItem/>
-      <MenuItem text="Quit"/>
+      <MenuItem text="Quit" fx:id="quitMenuItem"/>
     </items>
   </Menu>
   <Menu text="View">
@@ -24,14 +28,14 @@
   </Menu>
   <Menu text="Edit">
     <items>
-      <MenuItem text="Preferences"/>
+      <MenuItem text="Preferences" fx:id="preferencesMenuItem"/>
     </items>
   </Menu>
   <Menu text="Help">
     <items>
-      <MenuItem text="Support"/>
+      <MenuItem text="Support" fx:id="supportMenuItem"/>
       <SeparatorMenuItem/>
-      <MenuItem text="About"/>
+      <MenuItem text="About" fx:id="aboutMenuItem"/>
     </items>
   </Menu>
 </MenuBar>
