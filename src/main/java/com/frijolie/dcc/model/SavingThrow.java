@@ -65,7 +65,6 @@ public class SavingThrow {
    * @param value to be set
    */
   void setSavingThrow(int value) {
-    // TODO does the value arg need to be validated?
     this.savingThrow.set(value);
   }
 }

@@ -487,7 +487,12 @@ public class DCCCharacter {
         hitPoints.setHitPoints(luckMod.getModifier() + hitPoints.getHitPoints());
         break;
       case 29:
-        // TODO add to known languages
+        int luckModifier = luckMod.getModifier();
+        if (luckModifier > 0) {
+          for (int i = luckModifier; i > 0; i--) {
+            languages.add(LanguageFactory.getZeroLevelLanguage());
+          }
+        }
         break;
       case 30:
         // every ±1 Luck Mod = ± 5' speed
